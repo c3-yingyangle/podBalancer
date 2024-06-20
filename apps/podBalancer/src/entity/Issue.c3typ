@@ -1,0 +1,30 @@
+/**
+* Issue.c3typ
+*
+* A JIRA issue.
+*/
+entity type Issue {
+  /** Name of assignee */
+  assignee: string
+
+  // /** User/person associated with the ticket. */
+  // person: Person(assignee, name)
+
+  /** Project key, like "EW". */
+  project: string
+
+  /** Start time of work on ticket. */
+  start: datetime
+
+  /** Amount of work in hours in the ticket. */
+  hours: double
+
+  /** Amount of work in the ticket. */
+  storyPoints: double
+
+  /** Date/time of resolution. */
+  resolution: datetime
+
+  /** Workstream of the ticket. */
+  workstream: Workstream
+}

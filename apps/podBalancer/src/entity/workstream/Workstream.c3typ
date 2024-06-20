@@ -1,0 +1,30 @@
+/**
+* Workstream.c3typ
+*
+* A workstream within the application.
+*/
+extendable entity type Workstream {
+  /** Name of the project. */
+  name: ~
+
+  /** Start date of the project. */
+  start: datetime
+
+  /** End date of the project. */
+  end: datetime
+
+  /** JQL query to retrieve issues for this workstream. */
+  query: string
+
+  /** Story points completed in this workstream. */
+  storyPointsCompleted: double
+
+  /** Story points remaining in the workstream. */
+  storyPointsRemaining: double
+
+  /** Issues under this workstream. */
+  issues: [Issue] (workstream)
+
+  // /** Assignments relating to this workstream. */
+  // assignments: [PersonToWorkstreamAssignment] (workstream)
+}

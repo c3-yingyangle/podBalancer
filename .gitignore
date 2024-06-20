@@ -9,3 +9,4 @@
 **/tsconfig.json
 **/.DS_STORE
 .c3nbrc.js
+.vscode
