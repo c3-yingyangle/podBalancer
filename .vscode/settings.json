@@ -1,0 +1,16 @@
+{
+  "workbench.view.alwaysShowHeaderActions": true,
+  "search.exclude": {
+    "**/gen/cache/**": true
+  },
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/.DS_Store": true,
+    "**/.fingerprints.txt": true,
+    "tsconfig.json": true,
+    "**/.vscode/**": true,
+    "**/.vs-cache/**": true
+  },
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "search.useIgnoreFiles": false
+}

@@ -1,0 +1,29 @@
+{
+  "author": "C3 AI",
+  "name": "podBalancer",
+  "dependencies": [
+    "platform",
+    "uiComponentLibrary"
+  ],
+  "description": "Pod Balancers",
+  "eslintConfig": {
+    "extends": [
+      "plugin:@c3/c3-base",
+      "plugin:@c3/typescript",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "@c3"
+    ],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          "argsIgnorePattern": "^e$|^_",
+          "ignoreRestSiblings": true
+        }
+      ],
+      "import/prefer-default-export": "off"
+    }
+  }
+}

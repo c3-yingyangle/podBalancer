@@ -1,0 +1,11 @@
+**/node_modules/**
+**/.ipynb_checkpoints/**
+**/gen/cache/**
+**/.vs-cache/**
+*/**/.vscode
+.vscode/.c3*
+**/.fingerprints.txt
+**/jsconfig.json
+**/tsconfig.json
+**/.DS_STORE
+.c3nbrc.js
