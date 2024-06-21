@@ -4,7 +4,7 @@
     "mode": "single-select",
     "status": "none",
     "minOneSelected": true,
-    "value": ["PAST"],
+    "value": ["FUTURE"],
     "layout": "fixed",
     "buttons": [
       {
@@ -18,5 +18,12 @@
         "value": "FUTURE"
       }
     ]
-  }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisWorkstreamsFilterButton.SET_SEGMENTED_BUTTON_VALUE",
+      "effectType": "FilterWorkstreamCardListEpic",
+      "payloadStrategy": "MERGE"
+    }
+  ]
 }

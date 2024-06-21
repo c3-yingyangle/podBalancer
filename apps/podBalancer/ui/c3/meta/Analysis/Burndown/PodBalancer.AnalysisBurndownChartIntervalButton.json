@@ -13,10 +13,17 @@
         "value": "DAY"
       },
       {
-        "label": "Week",
+        "label": "Month",
         "icon": "clock",
-        "value": "WEEK"
+        "value": "MONTH"
       }
     ]
-  }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisBurndownChartIntervalButton.SET_SEGMENTED_BUTTON_VALUE",
+      "effectType": "SetBurndownChartIntervalEpic",
+      "payloadStrategy": "MERGE"
+    }
+  ]
 }

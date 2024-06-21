@@ -1,5 +1,9 @@
 {
   "type": "UiSdlConnected<UiSdlLayoutNavigation>",
+  "applicationStateRef": {
+    "type": "UiSdlApplicationStateRef",
+    "id": "PodBalancer.PodBalancerApplicationState"
+  },
   "component": {
     "pageId": "analysis",
     "navigation": {

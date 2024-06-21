@@ -1,0 +1,26 @@
+[
+  {
+    "id":"HoursCreated_Workstream",
+    "name":"HoursCreated",
+    "srcType":"Workstream",
+    "tsDecl":{
+      "data":"issues",
+      "start":"creationDate",
+      "value":"hours",
+      "treatment":"SUM",
+      "overlapHandling": "SUM"
+    }
+  },
+  {
+    "id":"HoursCompleted_Workstream",
+    "name":"HoursCompleted",
+    "srcType":"Workstream",
+    "tsDecl":{
+      "data":"issues",
+      "start":"resolution",
+      "value":"hours",
+      "treatment":"SUM",
+      "overlapHandling": "SUM"
+    }
+  }
+]

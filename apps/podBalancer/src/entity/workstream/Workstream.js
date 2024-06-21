@@ -1,3 +1,7 @@
+function createWorkstream(spec) {
+  return Workstream.make(spec).create();
+}
+
 /**
  * @this {Workstream}
  */

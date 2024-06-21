@@ -3,7 +3,7 @@
 *
 * A JIRA issue.
 */
-entity type Issue {
+entity type Issue mixes FeatureEvaluatable {
   /** Convert from integration json to this type. */
   fromIntegrationJson: inline function(workstreamId: !string, o: !json): !Issue js
 

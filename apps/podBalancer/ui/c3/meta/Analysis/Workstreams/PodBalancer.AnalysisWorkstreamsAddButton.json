@@ -7,7 +7,7 @@
   },
   "effectTriggers": [
     {
-      "trigger": "BUTTON_CLICK",
+      "trigger": "PodBalancer.AnalysisWorkstreamsAddButton.BUTTON_CLICK",
       "effectType": "UiSdlEpicShowUiSdlModal",
       "payload": {
         "modal": "PodBalancer.AnalysisWorkstreamsModal"

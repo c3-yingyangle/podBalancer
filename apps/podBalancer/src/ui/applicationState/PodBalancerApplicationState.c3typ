@@ -1,0 +1,24 @@
+/*
+ * Copyright 2009-2024 C3 AI (www.c3.ai). All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3 and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3 and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* PodBalancerApplicationState.c3typ
+*/
+
+@typeScript
+type PodBalancerApplicationState mixes UiSdlApplicationState {
+  // listens for actions of type STORE_WORKSTREAM
+  @uiSdlActionCreator(actionType='STORE_WORKSTREAM')
+  @typeScript(env="client")
+  storeCurrentWorkstreamAction: function(id: string, obj: json): UiSdlReduxAction ts-client
+
+  // stores current {@link Workstream} in application state
+  @uiSdlReducer(actionType='STORE_WORKSTREAM')
+  @typeScript(env="client")
+  storeCurrenWorkstreamReducer: private inline function(state: !UiSdlReduxState, action: UiSdlReduxAction): UiSdlReduxState ts-client
+}
