@@ -1,0 +1,7 @@
+/**
+* PodBalancerExpressions.c3typ
+*
+*/
+type PodBalancerExpressions mixes ExpressionEngineFunction {
+  calcWorkstreamHoursRemaining: inline function(workstreamId: string): int js
+}

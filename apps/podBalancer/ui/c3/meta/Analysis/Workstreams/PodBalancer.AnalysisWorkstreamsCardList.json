@@ -19,7 +19,7 @@
           "spec": {
             "filter": "end > now()",
             "order": "ascending(end)",
-            "include": "this, humanDateRange",
+            "include": "this, humanDateRange, hoursRemainingMinusAllocation",
             "limit": -1
           }
         }
@@ -29,6 +29,12 @@
       },
       "subHeader": {
         "fieldName": "humanDateRange"
+      },
+      "numericalIndicator": {
+        "fieldName": "hoursRemainingMinusAllocation",
+        "minimum": 0,
+        "maximum": 10,
+        "gradient": "gradient1"
       }
     }
   },

@@ -44,6 +44,10 @@ extendable entity type Workstream mixes FeatureEvaluatable {
   /** Story points remaining in the workstream. */
   hoursRemaining: double calc sum(issues.(statusCategory != "Done").storyPoints) * hoursPerStoryPoint
 
+  // Hard code
+  hoursRemainingMinusAllocation: int calc calcWorkstreamHoursRemaining(id)
+  // hoursRemainingMinusAllocation: int calc 8
+
   /** Issues under this workstream. */
   issues: [Issue] (workstream)
 
