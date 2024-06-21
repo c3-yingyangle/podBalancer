@@ -1,0 +1,17 @@
+{
+  "type": "UiSdlConnected<UiSdlSearch>",
+  "component": {
+    "placeholder": "Workstream"
+  },
+  "effectTriggers": [
+    {
+      "trigger": "SEARCH_CHANGE",
+      "effectType": "WorkstreamSearchEpic",
+      "payload": {
+        "searchField": "name",
+        "componentDataSpecId": "PodBalancer.AnalysisWorkstreamsCardList_dataSpec_ds"
+      },
+      "payloadStrategy": "MERGE"
+    }
+  ]
+}
