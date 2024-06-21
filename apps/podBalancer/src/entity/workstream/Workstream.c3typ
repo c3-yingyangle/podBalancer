@@ -21,6 +21,9 @@ extendable entity type Workstream mixes FeatureEvaluatable {
   /** End date of the workstream. */
   end: datetime
 
+  /** String representation of range of this workstream. */
+  humanDateRange: string calc concat(year(start), "-", month(start), "-", day(start), ' to ', year(end), "-", month(end), "-", day(end))
+
   /** JQL query to retrieve issues for this workstream. */
   query: string
 

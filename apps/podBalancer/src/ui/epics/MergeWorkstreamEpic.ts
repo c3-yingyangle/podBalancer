@@ -7,9 +7,8 @@
  */
 
 import { UiSdlActionsObservable, UiSdlStatesObservable } from "@c3/types";
-import { setDisabledAction, setLoadingAction } from "@c3/ui/UiSdlButton";
 import { ajax, requestDataAction } from "@c3/ui/UiSdlDataRedux";
-import { openCloseModalAction } from "@c3/ui/UiSdlModal";
+import { getFormFieldValuesFromState } from "@c3/ui/UiSdlForm";
 import { from, of } from "rxjs";
 import { concatAll, mergeMap } from "rxjs/operators";
 
@@ -21,19 +20,29 @@ export function epic(
     mergeMap(function (action) {
       const state = stateStream.value;
 
-      // Get selected Workstream from action payload
-      let selectedWorkstream = state.getIn([
-        "metadata",
-        "applications",
-        "byId",
-        "PodBalancer.PodBalancerApplicationState",
-        "manageWorkstream",
-        "id",
-      ]);
+      // Get form field values
+      let formFieldValues = getFormFieldValuesFromState(
+        "PodBalancer.AnalysisWorkstreamsManageModalForm",
+        state
+      );
+      let id = formFieldValues?.id || null;
+      let name = formFieldValues?.name || null;
+      let query = formFieldValues?.query || null;
+      let hoursPerStoryPoint = formFieldValues?.hoursPerStoryPoint || null;
+      let start = formFieldValues?.start || null;
+      let end = formFieldValues?.end || null;
 
       // Create new Workstream record
-      return ajax("Workstream", "remove", {
-        this: selectedWorkstream,
+      // TODO: handle cases where Workstream with this name already exists
+      return ajax("Workstream", "merge", {
+        this: {
+          id: id,
+          name: name,
+          query: query,
+          hoursPerStoryPoint: hoursPerStoryPoint,
+          start: start,
+          end: end,
+        },
       }).pipe(
         mergeMap(function (ajaxEvent) {
           let observables = [
@@ -41,26 +50,6 @@ export function epic(
             of(
               requestDataAction(
                 "PodBalancer.AnalysisWorkstreamsCardList_dataSpec_ds"
-              )
-            ),
-            of(
-              openCloseModalAction(
-                "PodBalancer.AnalysisWorkstreamsManageModal",
-                false
-              )
-            ),
-
-            // Renable button
-            of(
-              setDisabledAction(
-                "PodBalancer.AnalysisWorkstreamsManageModalRemoveButton",
-                false
-              )
-            ),
-            of(
-              setLoadingAction(
-                "PodBalancer.AnalysisWorkstreamsManageModalRemoveButton",
-                false
               )
             ),
           ];

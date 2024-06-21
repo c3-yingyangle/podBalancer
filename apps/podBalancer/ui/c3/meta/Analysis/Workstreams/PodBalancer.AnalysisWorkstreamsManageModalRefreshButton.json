@@ -1,0 +1,29 @@
+{
+  "type": "UiSdlConnected<UiSdlButton>",
+  "component": {
+    "usage": "primary",
+    "size": "large",
+    "content": "Refresh Issues"
+  },
+  "effectTriggers": [
+    {
+      "trigger": "BUTTON_CLICK",
+      "effectType": "RefreshWorkstreamIssuesEpic"
+    },
+    {
+      "trigger": "BUTTON_CLICK",
+      "actions": [
+        {
+          "type": "PodBalancer.AnalysisWorkstreamsManageModalRefreshButton.LOADING_SET",
+          "payload": { "value": true },
+          "payloadStrategy": "MERGE"
+        },
+        {
+          "type": "PodBalancer.AnalysisWorkstreamsManageModalRefreshButton.DISABLED_SET",
+          "payload": { "value": true },
+          "payloadStrategy": "MERGE"
+        }
+      ]
+    }
+  ]
+}
