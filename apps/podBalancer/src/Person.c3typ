@@ -1,0 +1,40 @@
+/*
+ * Copyright 2009-2024 C3 AI (www.c3.ai). All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3 and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3 and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+* Type to represent a resource working through a workstream in JIRA
+*/
+
+entity type Person {
+
+  /**
+   * Email associated with the {@link Person}
+   */
+  email: string
+  
+  /**
+   * Email associated with the {@link Person}
+   */
+  // tickets: [Issue](assignee, name)
+
+  /**
+   * Relation type between {@link Person} and {@link Workstream} with the extra detail of specifying the 
+   * allocation of their assignment on that workstream
+   */
+  assignments: [PersonToWorkstreamAssignment]()
+
+  /**
+   * Time overrides for a person whether that is PTO, Sick Days, Working Weekends, Working into evenings
+   */
+  timeOverrides: [TimeOverride](person)
+
+  /**
+   * The company the person works for (C3, Partner Company, Customer Company)
+   */
+  company: Company
+}
