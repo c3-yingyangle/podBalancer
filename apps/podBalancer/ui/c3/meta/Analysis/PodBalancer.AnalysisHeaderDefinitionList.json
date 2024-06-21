@@ -1,0 +1,22 @@
+{
+  "type": "UiSdlConnected<UiSdlDefinitionList>",
+  "component": {
+    "orientation": "HORIZONTAL",
+    "divider": true,
+    "dataSpec": {
+      "dataType": "Pod",
+      "advancedDataSpec": { "actionName": "getHeaderStats" },
+      "fields": [
+        {
+          "fieldName": "totalHoursCompleted",
+          "label": "Total FTE Hours Completed"
+        },
+        {
+          "fieldName": "totalHoursRemaining",
+          "label": "Total FTE Hours Completed"
+        },
+        { "fieldName": "nextDeliverable", "label": "Next Workstream End" }
+      ]
+    }
+  }
+}
