@@ -1,0 +1,8 @@
+[
+  {
+    "id": "DLACLIX",
+    "name": "DLACLIX",
+    "query": "project=DLACLIX ORDER BY created ASC",
+    "hoursPerStoryPoint": 8
+  }
+]
