@@ -1,0 +1,17 @@
+[
+  {
+    "id":"CumulativeHoursCreated",
+    "name":"CumulativeHoursCreated",
+    "expression": "rolling('SUM', HoursCreated)"
+  },
+  {
+    "id":"CumulativeHoursCompleted",
+    "name":"CumulativeHoursCompleted",
+    "expression": "rolling('SUM', HoursCompleted)"
+  },
+  {
+    "id":"TotalHoursToDo",
+    "name":"TotalHoursToDo",
+    "expression": "CumulativeHoursCreated - CumulativeHoursCompleted"
+  }
+]

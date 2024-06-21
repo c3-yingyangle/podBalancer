@@ -1,8 +1,65 @@
 {
-  "type": "UiSdlConnected<UiSdlEmptyState>",
+  "type": "UiSdlConnected<UiSdlForm>",
   "component": {
-    "headerText": {
-      "dynamicValue": "Form goes here"
+    "wrapWithMetadataId": true,
+    "hideFooterButtons": true,
+    "dataSpec": {
+      "fieldSets": {
+        "type": "[UiSdlFormFieldSet]",
+        "value": [
+          {
+            "type": "UiSdlFormFieldSet",
+            "collapsible": false,
+            "fields": [
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "name",
+                "label": "Workstream Name",
+                "inputElement": {
+                  "type": "UiSdlTextInput",
+                  "placeholder": "",
+                  "fluid": true
+                }
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "query",
+                "label": "JQL Query",
+                "inputElement": {
+                  "type": "UiSdlTextInput",
+                  "placeholder": "",
+                  "fluid": true
+                }
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "hoursPerStoryPoint",
+                "label": "Hours Per Story Point",
+                "inputElement": {
+                  "type": "UiSdlNumberInput",
+                  "placeholder": "",
+                  "fluid": true
+                }
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "dateRange",
+                "label": "Date Range",
+                "inputElement": {
+                  "type": "UiSdlDateTimeRangeInput",
+                  "fluid": true
+                }
+              }
+            ]
+          }
+        ]
+      }
     }
-  }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisWorkstreamsModal.PRIMARY_BUTTON_CLICK",
+      "effectType": "CreateWorkstreamEpic"
+    }
+  ]
 }

@@ -3,11 +3,14 @@
 *
 * A workstream within the application.
 */
-extendable entity type Workstream {
+extendable entity type Workstream mixes FeatureEvaluatable {
   /** Refresh all issues by fetching from JIRA.
   *
   * Returns the number of fetched issues. */
   refreshIssues: member function(limit: int = 100): int js-server
+
+  /** Create a workstream with the specified spec. */
+  createWorkstream: function(spec: json): Workstream js-server
 
   /** Name of the workstream. */
   name: ~

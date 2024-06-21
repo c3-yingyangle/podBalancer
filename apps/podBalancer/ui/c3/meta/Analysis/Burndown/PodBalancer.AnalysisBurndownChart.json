@@ -1,8 +1,23 @@
 {
-  "type": "UiSdlConnected<UiSdlEmptyState>",
+  "type": "UiSdlConnected<UiSdlDynamicComponentRenderer>",
   "component": {
-    "headerText": {
-      "dynamicValue": "Chart goes here"
+    "dataSpec": {
+      "dataType": {
+        "typeName": "BurndownDynamicRenderHelper"
+      },
+      "contextVars": {
+        "timeHorizon": {
+          "type": "UiSdlApplicationStateValueParam",
+          "id": "PodBalancer.PodBalancerApplicationState",
+          "path": "selectedWorkstream.id"
+        }
+      },
+      "advancedDataSpec": {
+        "actionName": "getChartConfig",
+        "args": {
+          "workstreamId": "${workstreamId}"
+        }
+      }
     }
   }
 }
