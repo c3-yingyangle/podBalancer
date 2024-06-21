@@ -2,9 +2,7 @@
   "type": "UiSdlConnected<UiSdlModal>",
   "component": {
     "size": "MEDIUM",
-    "header": {
-      "text": "Manage Workstream"
-    },
+    "header": { "text": "Manage Workstream" },
     "modalType": {
       "type": "UiSdlTwoButtonModal",
       "primaryButtonLabel": "Save Changes",
@@ -15,9 +13,8 @@
       "closeModalOnSecondaryButtonClick": true
     },
     "children": [
-      {
-        "id": "PodBalancer.AnalysisWorkstreamsManageModalForm"
-      }
+      { "id": "PodBalancer.AnalysisWorkstreamsManageModalButtons" },
+      { "id": "PodBalancer.AnalysisWorkstreamsManageModalForm" }
     ]
   }
 }

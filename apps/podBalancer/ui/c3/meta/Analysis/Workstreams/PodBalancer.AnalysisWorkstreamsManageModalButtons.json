@@ -1,0 +1,8 @@
+{
+  "type": "UiSdlConnected<UiSdlLayoutContainer>",
+  "component": {
+    "children": [
+      [{ "id": "PodBalancer.AnalysisWorkstreamsManageModalRefreshButton" }]
+    ]
+  }
+}
