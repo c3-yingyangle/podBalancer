@@ -1,10 +1,10 @@
 {
   "author": "C3 AI",
   "name": "podBalancer",
-  "dependencies": [
-    "platform",
-    "uiComponentLibrary"
-  ],
+  "dependencies": {
+    "platform": "*",
+    "uiComponentLibrary": "*"
+  },
   "description": "Pod Balancers",
   "eslintConfig": {
     "extends": [
@@ -25,5 +25,6 @@
       ],
       "import/prefer-default-export": "off"
     }
-  }
+  },
+  "version": "1.0.0"
 }

@@ -7,12 +7,14 @@
  */
 
 /**
- * Ticket.c3typ
- */
+* A day of time that a company provides as holiday to its employees
+*/
 
-entity type Ticket {
+entity type Holiday {
+
   /**
-   * The {@link User} assigned to this ticket.
-   */ 
-  assignee: User
+   * The date of the holiday
+   */
+  date: datetime
+
 }
