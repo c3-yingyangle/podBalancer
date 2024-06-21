@@ -3,5 +3,5 @@
 *
 */
 type PodBalancerExpressions mixes ExpressionEngineFunction {
-  calcWorkstreamHoursRemaining: inline function(workstreamId: string): int js
+  calcWorkstreamHoursRemaining: function(workstreamId: string): int js-server
 }
