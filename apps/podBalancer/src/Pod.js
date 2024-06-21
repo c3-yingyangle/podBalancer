@@ -12,7 +12,10 @@ function getHeaderStats() {
   _.map(workstreams, function (ws) {
     totalHoursCompleted += ws.hoursCompleted ?? 0;
     totalHoursRemaining += ws.hoursRemaining ?? 0;
-    if (!nextDeliverable || nextDeliverable > ws.end) {
+    if (
+      !nextDeliverable ||
+      (nextDeliverable > ws.end && ws.end > DateTime.now())
+    ) {
       nextDeliverable = ws.end;
     }
   });
