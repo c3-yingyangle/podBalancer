@@ -26,7 +26,7 @@ entity type Person {
    * Relation type between {@link Person} and {@link Workstream} with the extra detail of specifying the 
    * allocation of their assignment on that workstream
    */
-  assignments: [PersonToWorkstreamAssignment]()
+  // assignments: [PersonToWorkstreamAssignment]()
 
   /**
    * Time overrides for a person whether that is PTO, Sick Days, Working Weekends, Working into evenings

@@ -7,20 +7,18 @@
  */
 
 /**
-* Relation type between {@link Holiday} and {@link Company}
+* A specific holiday calendar for a company (example: US Holidays at C3 AI)
 */
 
-entity type HolidayToCompanyRelation {
-
-  /**
-   * The associated {@link Holiday}
-   */
-  holiday: Holiday
-
-
+entity type HolidayCalendar {
   /**
    * The associated {@link Company}
    */
   company: Company
 
+
+  /**
+   * The associated {@link Holiday}
+   */
+  holidays: [Holiday](calendar)
 }
