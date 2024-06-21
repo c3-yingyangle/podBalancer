@@ -1,6 +1,7 @@
 {
   "type": "UiSdlConnected<UiSdlCardList>",
   "component": {
+    "wrapWithMetadataId": true,
     "orientation": "VERTICAL",
     "primaryActionButton": {
       "name": "Analyze",
@@ -29,9 +30,6 @@
       "subHeader": {
         "fieldName": "humanDateRange"
       }
-      // "contentBodyText": {
-      //   "fieldName": "end"
-      // }
     }
   },
   "effectTriggers": [

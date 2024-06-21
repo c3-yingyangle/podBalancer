@@ -1,6 +1,7 @@
 {
   "type": "UiSdlConnected<UiSdlDynamicComponentRenderer>",
   "component": {
+    "wrapWithMetadataId": true,
     "dataSpec": {
       "dataType": {
         "typeName": "BurndownDynamicRenderHelper"

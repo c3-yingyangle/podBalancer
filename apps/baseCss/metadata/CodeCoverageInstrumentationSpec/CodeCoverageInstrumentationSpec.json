@@ -1,0 +1,4 @@
+{
+  "id": "baseCss",
+  "excludePaths": [".*/test/.*", ".*/metadata/.*", ".*/ui/.*", ".*/resource/.*"]
+}
