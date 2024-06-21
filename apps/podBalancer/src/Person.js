@@ -3,6 +3,6 @@ function fromIntegrationJson(o) {
     id: o["Assignee Email"],
     name: o["Assignee"],
     email: o["Assignee Email"],
-    company: { id: "c3" },
+    company: { id: "C3 AI" },
   });
 }

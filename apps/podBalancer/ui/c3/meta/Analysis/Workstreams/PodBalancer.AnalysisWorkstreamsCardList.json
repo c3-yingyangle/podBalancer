@@ -1,8 +1,23 @@
 {
-  "type": "UiSdlConnected<UiSdlEmptyState>",
+  "type": "UiSdlConnected<UiSdlCardList>",
   "component": {
-    "headerText": {
-      "dynamicValue": "Card list goes here"
+    "orientation": "VERTICAL",
+    "primaryActionButton": {
+      "name": "Analyze",
+      "actionSuffix": "VIEW_DETAILS"
+    },
+    "secondaryActionButton": {
+      "name": "Edit",
+      "actionSuffix": "EXPORT"
+    },
+    "dataSpec": {
+      "dataType": "Workstream",
+      "header": {
+        "fieldName": "name"
+      },
+      "subHeader": {
+        "fieldName": "end"
+      }
     }
   }
 }

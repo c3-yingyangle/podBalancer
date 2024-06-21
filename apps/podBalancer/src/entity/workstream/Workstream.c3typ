@@ -25,10 +25,10 @@ extendable entity type Workstream {
   hoursPerStoryPoint: double
 
   /** Story points completed in this workstream. */
-  storyPointsCompleted: double
+  storyPointsCompleted: double calc sum(issues.(statusCategory == "Done").storyPoints)
 
   /** Story points remaining in the workstream. */
-  storyPointsRemaining: double
+  storyPointsRemaining: double calc sum(issues.(statusCategory != "Done").storyPoints)
 
   /** Issues under this workstream. */
   issues: [Issue] (workstream)
