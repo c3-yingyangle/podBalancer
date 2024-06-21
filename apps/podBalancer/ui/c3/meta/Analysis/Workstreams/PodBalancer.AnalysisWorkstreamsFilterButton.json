@@ -1,0 +1,22 @@
+{
+  "type": "UiSdlConnected<UiSdlAtomicSegmentedButton>",
+  "component": {
+    "mode": "single-select",
+    "status": "none",
+    "minOneSelected": true,
+    "value": ["PAST"],
+    "layout": "fixed",
+    "buttons": [
+      {
+        "label": "Past",
+        "icon": "clock",
+        "value": "PAST"
+      },
+      {
+        "label": "Future",
+        "icon": "clock",
+        "value": "FUTURE"
+      }
+    ]
+  }
+}

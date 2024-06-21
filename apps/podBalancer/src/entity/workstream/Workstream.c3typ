@@ -9,13 +9,13 @@ extendable entity type Workstream {
   * Returns the number of fetched issues. */
   refreshIssues: member function(limit: int = 100): int js-server
 
-  /** Name of the project. */
+  /** Name of the workstream. */
   name: ~
 
-  /** Start date of the project. */
+  /** Start date of the workstream. */
   start: datetime
 
-  /** End date of the project. */
+  /** End date of the workstream. */
   end: datetime
 
   /** JQL query to retrieve issues for this workstream. */

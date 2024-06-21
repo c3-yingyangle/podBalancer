@@ -1,0 +1,39 @@
+{
+  "type": "UiSdlConnected<UiSdlLayoutContainer>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "children": [
+      [
+        {
+          "id": "PodBalancer.AnalysisPersonAllocationDataGrid",
+          "width": 100
+        }
+      ],
+      [
+        {
+          "id": "PodBalancer.AnalysisWorkstreamsContainer",
+          "width": 40
+        },
+        {
+          "id": "PodBalancer.AnalysisBurndownChartContainer",
+          "width": 60
+        }
+      ],
+      [
+        {
+          "id": "PodBalancer.AnalysisPersonAllocationModal",
+          "width": 100
+        }
+      ],
+      [
+        {
+          "id": "PodBalancer.AnalysisWorkstreamsModal",
+          "width": 100
+        }
+      ]
+    ]
+  }
+}
+
+
+

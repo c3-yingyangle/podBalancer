@@ -1,0 +1,8 @@
+{
+  "type": "UiSdlConnected<UiSdlEmptyState>",
+  "component": {
+    "headerText": {
+      "dynamicValue": "Chart goes here"
+    }
+  }
+}

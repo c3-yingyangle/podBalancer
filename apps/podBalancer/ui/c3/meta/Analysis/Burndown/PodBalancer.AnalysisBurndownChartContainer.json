@@ -1,0 +1,20 @@
+{
+    "type": "UiSdlConnected<UiSdlLayoutContainer>",
+    "component": {
+      "wrapWithMetadataId": true,
+      "children": [
+        [
+          {
+            "id": "PodBalancer.AnalysisBurndownChartIntervalButton",
+            "width": 100
+          }
+        ],
+        [
+          {
+            "id": "PodBalancer.AnalysisBurndownChart",
+            "width": 100
+          }
+        ]
+      ]
+    }
+  }

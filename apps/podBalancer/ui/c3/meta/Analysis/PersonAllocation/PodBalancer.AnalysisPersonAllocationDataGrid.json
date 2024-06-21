@@ -1,0 +1,9 @@
+
+{
+  "type": "UiSdlConnected<UiSdlEmptyState>",
+  "component": {
+    "headerText": {
+      "dynamicValue": "Grid goes here"
+    }
+  }
+}
