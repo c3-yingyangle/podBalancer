@@ -78,7 +78,7 @@ function generateChart(workstream, interval) {
         },
       ],
       dataSpec: {
-        dataType: "Workstream",
+        dataType: "UiHelper",
         yAxisFields: [
           {
             legendLabel: "Cumulative Total",
