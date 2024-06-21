@@ -3,6 +3,8 @@
     "id": "DLACLIX",
     "name": "DLACLIX",
     "query": "project=DLACLIX ORDER BY created ASC",
-    "hoursPerStoryPoint": 8
+    "hoursPerStoryPoint": 8,
+    "start": "2023-07-01",
+    "end": "2024-07-01"
   }
 ]

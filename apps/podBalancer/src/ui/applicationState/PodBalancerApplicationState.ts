@@ -6,11 +6,11 @@
  * This material may be covered by one or more patents or pending patent applications.
  */
 
-import { setConfigInApplicationState } from '@c3/ui/UiSdlApplicationState';
+import { setConfigInApplicationState } from "@c3/ui/UiSdlApplicationState";
 
 export function storeCurrentWorkstreamAction(id, obj) {
   return {
-    type: id + '.STORE_WORKSTREAM',
+    type: id + ".STORE_WORKSTREAM",
     payload: {
       applicationStateId: id,
       obj: obj,
@@ -20,5 +20,30 @@ export function storeCurrentWorkstreamAction(id, obj) {
 
 export function storeCurrenWorkstreamReducer(state, action) {
   // Save current Workstream in Application State
-  return setConfigInApplicationState(action.payload.applicationStateId, state, ['selectedWorkstream'], action.payload.obj);
+  return setConfigInApplicationState(
+    action.payload.applicationStateId,
+    state,
+    ["selectedWorkstream"],
+    action.payload.obj
+  );
+}
+
+export function storeManageWorkstreamAction(id, obj) {
+  return {
+    type: id + ".STORE_MANAGE_WORKSTREAM",
+    payload: {
+      applicationStateId: id,
+      obj: obj,
+    },
+  };
+}
+
+export function storeManageWorkstreamReducer(state, action) {
+  // Save current Workstream in Application State
+  return setConfigInApplicationState(
+    action.payload.applicationStateId,
+    state,
+    ["manageWorkstream"],
+    action.payload.obj
+  );
 }

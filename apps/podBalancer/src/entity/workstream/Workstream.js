@@ -1,5 +1,5 @@
 function createWorkstream(spec) {
-  return Workstream.make(spec).create();
+  return Workstream.make(spec).upsert();
 }
 
 /**

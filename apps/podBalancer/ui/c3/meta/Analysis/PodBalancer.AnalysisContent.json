@@ -30,6 +30,12 @@
           "id": "PodBalancer.AnalysisWorkstreamsModal",
           "width": 100
         }
+      ],
+      [
+        {
+          "id": "PodBalancer.AnalysisWorkstreamsManageModal",
+          "width": 100
+        }
       ]
     ]
   }
