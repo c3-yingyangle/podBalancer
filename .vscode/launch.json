@@ -1,9 +1,0 @@
-{
-  "configurations": [
-    {
-      "type": "c3debug",
-      "request": "attach",
-      "name": "C3 Remote Debugger"
-    }
-  ]
-}

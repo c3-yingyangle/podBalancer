@@ -7,8 +7,8 @@
       "actionSuffix": "ANALYZE_WORKSTREAM"
     },
     "secondaryActionButton": {
-      "name": "Remove",
-      "actionSuffix": "REMOVE_WORKSTREAM"
+      "name": "Manage",
+      "actionSuffix": "MANAGE_WORKSTREAM"
     },
     "dataSpec": {
       "dataType": "Workstream",
@@ -18,7 +18,7 @@
           "spec": {
             "filter": "end > now()",
             "order": "ascending(end)",
-            "include": "id, name, start, end",
+            "include": "id, name, humanDateRange",
             "limit": -1
           }
         }
@@ -27,11 +27,11 @@
         "fieldName": "name"
       },
       "subHeader": {
-        "fieldName": "start"
-      },
-      "contentBodyText": {
-        "fieldName": "end"
+        "fieldName": "humanDateRange"
       }
+      // "contentBodyText": {
+      //   "fieldName": "end"
+      // }
     }
   },
   "effectTriggers": [
@@ -40,6 +40,15 @@
       "effectType": "AnalyzeWorkstreamEpic",
       "payload": {
         "applicationStateId": "PodBalancer.PodBalancerApplicationState"
+      },
+      "payloadStrategy": "MERGE"
+    },
+    {
+      "trigger": "PodBalancer.AnalysisWorkstreamsCardList.CARD_ACTION_CLICK_MANAGE_WORKSTREAM",
+      "effectType": "ManageWorkstreamEpic",
+      "payload": {
+        "applicationStateId": "PodBalancer.PodBalancerApplicationState",
+        "modalId": "PodBalancer.AnalysisWorkstreamsManageModal"
       },
       "payloadStrategy": "MERGE"
     },

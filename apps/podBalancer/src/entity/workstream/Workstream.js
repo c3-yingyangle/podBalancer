@@ -1,5 +1,5 @@
 function createWorkstream(spec) {
-  return Workstream.make(spec).create();
+  return Workstream.make(spec).upsert();
 }
 
 /**
@@ -31,6 +31,12 @@ function refreshIssues(limit) {
     })
     .value();
   Person.mergeBatch(person);
+
+  // For now, remove all issues for this workstream.
+  Issue.removeAll(
+    RemoveAllSpec.make({ filter: Filter.eq("workstream.id", this.id) }),
+    true
+  );
 
   return Issue.upsertBatch(issues)?.count();
 }

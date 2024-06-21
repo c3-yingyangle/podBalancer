@@ -34,7 +34,7 @@ function generateChart(workstream, interval) {
   var metricFilter = Filter.eq("id", workstream.id);
 
   var chartConfig = {
-    id: "PodBalancer.AnalysisBurndownChart_" + workstream.id + "_" + interval,
+    id: "PodBalancer.AnalysisBurndownChart_" + DateTime.now().millis,
     type: "UiSdlConnected<UiSdlTimeseriesLineBarChart>",
     component: {
       wrapWithMetadataId: true,

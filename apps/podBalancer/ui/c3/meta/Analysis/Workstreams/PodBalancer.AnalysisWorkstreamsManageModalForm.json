@@ -1,0 +1,108 @@
+{
+  "type": "UiSdlConnected<UiSdlForm>",
+  "applicationStateRef": {
+    "id": "PodBalancer.PodBalancerApplicationState"
+  },
+  "component": {
+    "wrapWithMetadataId": true,
+    "hideFooterButtons": true,
+    "submitButtonText": "Save",
+    "dataSpec": {
+      "dataType": "Workstream",
+      "actionName": "get",
+      "actionArgs": { "this": { "id": "${id}" }, "include": "this" },
+      "contextVars": {
+        "id": {
+          "type": "UiSdlApplicationStateValueParam",
+          "id": "PodBalancer.PodBalancerApplicationState",
+          "path": "manageWorkstream.id"
+        }
+      },
+      "fieldSets": {
+        "type": "[UiSdlFormFieldSet]",
+        "value": [
+          {
+            "type": "UiSdlFormFieldSet",
+            "collapsible": false,
+            "fields": [
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "hidden": true,
+                "fieldName": "id",
+                "inputElement": {
+                  "type": "UiSdlTextInput",
+                  "placeholder": "",
+                  "fluid": true
+                },
+                "dataPropSpecs": [{ "dataPath": "id", "prop": "value" }]
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "name",
+                "label": "Workstream Name",
+                "inputElement": {
+                  "type": "UiSdlTextInput",
+                  "placeholder": "",
+                  "fluid": true
+                },
+                "dataPropSpecs": [{ "dataPath": "name", "prop": "value" }]
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "query",
+                "label": "JQL Query",
+                "inputElement": {
+                  "type": "UiSdlTextInput",
+                  "placeholder": "",
+                  "fluid": true
+                },
+                "dataPropSpecs": [{ "dataPath": "query", "prop": "value" }]
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "hoursPerStoryPoint",
+                "label": "Hours Per Story Point",
+                "inputElement": {
+                  "type": "UiSdlNumberInput",
+                  "placeholder": "",
+                  "fluid": true
+                },
+                "dataPropSpecs": [
+                  { "dataPath": "hoursPerStoryPoint", "prop": "value" }
+                ]
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "start",
+                "label": "Start",
+                "inputElement": {
+                  "type": "UiSdlDateTimeInput",
+                  "placeholder": "",
+                  "fluid": true
+                },
+                "dataPropSpecs": [{ "dataPath": "start", "prop": "value" }]
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "end",
+                "label": "End",
+                "inputElement": {
+                  "type": "UiSdlDateTimeInput",
+                  "placeholder": "",
+                  "fluid": true
+                },
+                "dataPropSpecs": [{ "dataPath": "end", "prop": "value" }]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisWorkstreamsManageModal.PRIMARY_BUTTON_CLICK",
+      "effectType": "MergeWorkstreamEpic"
+    }
+  ]
+}
