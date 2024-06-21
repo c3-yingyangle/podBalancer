@@ -6,23 +6,34 @@
  * This material may be covered by one or more patents or pending patent applications.
  */
 
-import { mergeMap, concatAll } from 'rxjs/operators';
-import { of, from } from 'rxjs';
-import { UiSdlActionsObservable, UiSdlStatesObservable } from '@c3/types';
-import { ajax, requestDataAction, mergeArgumentsAction } from "@c3/ui/UiSdlDataRedux";
-import { getFormFieldValuesFromState } from "@c3/ui/UiSdlForm";
+import { UiSdlActionsObservable, UiSdlStatesObservable } from "@c3/types";
+import { setDisabledAction, setLoadingAction } from "@c3/ui/UiSdlButton";
+import { ajax, requestDataAction } from "@c3/ui/UiSdlDataRedux";
+import { openCloseModalAction } from "@c3/ui/UiSdlModal";
+import { from, of } from "rxjs";
+import { concatAll, mergeMap } from "rxjs/operators";
 
-export function epic(actionStream: UiSdlActionsObservable, stateStream: UiSdlStatesObservable): UiSdlActionsObservable {
+export function epic(
+  actionStream: UiSdlActionsObservable,
+  stateStream: UiSdlStatesObservable
+): UiSdlActionsObservable {
   return actionStream.pipe(
     mergeMap(function (action) {
       const state = stateStream.value;
 
       // Get selected Workstream from action payload
-      let selectedWorkstream = action?.payload?.cardData;
+      let selectedWorkstream = state.getIn([
+        "metadata",
+        "applications",
+        "byId",
+        "PodBalancer.PodBalancerApplicationState",
+        "manageWorkstream",
+        "id",
+      ]);
 
       // Create new Workstream record
-      return ajax('Workstream', 'remove', {
-        this: selectedWorkstream
+      return ajax("Workstream", "remove", {
+        this: selectedWorkstream,
       }).pipe(
         mergeMap(function (ajaxEvent) {
           let observables = [
@@ -31,11 +42,32 @@ export function epic(actionStream: UiSdlActionsObservable, stateStream: UiSdlSta
               requestDataAction(
                 "PodBalancer.AnalysisWorkstreamsCardList_dataSpec_ds"
               )
-            )
+            ),
+            of(
+              openCloseModalAction(
+                "PodBalancer.AnalysisWorkstreamsManageModal",
+                false
+              )
+            ),
+
+            // Renable button
+            of(
+              setDisabledAction(
+                "PodBalancer.AnalysisWorkstreamsManageModalRemoveButton",
+                false
+              )
+            ),
+            of(
+              setLoadingAction(
+                "PodBalancer.AnalysisWorkstreamsManageModalRemoveButton",
+                false
+              )
+            ),
           ];
 
           return from(observables).pipe(concatAll());
-      }))
+        })
+      );
     })
   );
 }
