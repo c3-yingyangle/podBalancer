@@ -12,6 +12,14 @@ extendable entity type Workstream mixes FeatureEvaluatable {
   /** Create a workstream with the specified spec. */
   createWorkstream: function(spec: json): Workstream js-server
 
+  // Get how many hours a given person is working each day in a given time frame
+  // Takes into account the person's allocation percentage, PTO, holidays, and weekends
+  getPersonAllocationHours: function(person: Person, workstream: Workstream, start: datetime, end: datetime): json js-server
+
+  // Get how many hours all people is working each day in a given time frame
+  // Takes into account everyone's allocation percentage, PTO, holidays, and weekends
+  getWorkstreamAllocationHours: function(workstream: Workstream, start: datetime, end: datetime): json js-server
+
   /** Name of the workstream. */
   name: ~
 

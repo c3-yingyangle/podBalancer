@@ -10,7 +10,7 @@
 * Relation type between {@link Person} and {@link Workstream}
 */
 
-type PersonToWorkstreamAssignment {
+entity type PersonToWorkstreamAssignment {
 
   /**
    * Link to associated {@link Person}
@@ -33,7 +33,8 @@ type PersonToWorkstreamAssignment {
   end: datetime
 
   /**
-   * % Allocation of {@link Person] to {@linkn Workstream} during given time frame
+   * Percent allocation of {@link Person} to {@link Workstream} during this time frame.
+   * Can be a number between 0 and 100.
    */
   allocation: double
 
