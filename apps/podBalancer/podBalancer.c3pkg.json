@@ -3,7 +3,7 @@
   "name": "podBalancer",
   "dependencies": {
     "platform": "*",
-    "uiComponentLibrary": "*"
+    "uiComponentLibraryReact": "*"
   },
   "description": "Pod Balancers",
   "eslintConfig": {
