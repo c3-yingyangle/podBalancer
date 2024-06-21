@@ -14,32 +14,51 @@
     "tableActions": [
       {
         "type": "UiSdlActionGroup",
-        "name": "Create Person",
+        "name": "Create Person Allocation",
         "iconSuffix": "plus",
-        "actionSuffix": "CREATE_PERSON"
+        "actionSuffix": "CREATE_PERSON_ALLOCATION"
       }
     ],
     "dataSpec": {
-      "dataType": "Person",
+      "dataType": "PersonToWorkstreamAssignment",
+      // "actionName": "fetch",
+      // "actionArgs": {
+      //   "spec": {
+      //     // "filter": "intersects(id, [\"${linkedSubjectsIds}\"])"
+      //   }
+      // },
       "columnFields": [
         {
-          "fieldName": "name",
-          "label": "Name",
+          "fieldName": "workstream.name",
+          "label": "Workstream",
           "sortable": true,
           "searchable": true
         },
         {
-          "fieldName": "company.name",
-          "label": "Company",
-          "sortable": true,
-          "searchable": true
+          "fieldName": "start",
+          "label": "Start",
+          "sortable": true
+        },
+        {
+          "fieldName": "end",
+          "label": "End",
+          "sortable": true
+        },
+        {
+          "fieldName": "allocation",
+          "label": "Allocation",
+          "sortable": true
         }
       ]
     }
   },
   "effectTriggers": [
+    // {
+    //   "trigger": "PodBalancer.AnalysisPersonAllocationDataGrid.TABLE_ACTION_CLICK_CREATE_PERSON_ALLOCATION",
+    //   "effectType": "CreatePersonEpic"
+    // },
     {
-      "trigger": "PodBalancer.AnalysisPersonAllocationDataGrid.TABLE_ACTION_CLICK_CREATE_PERSON",
+      "trigger": "PodBalancer.AnalysisPersonAllocationDataGrid.TABLE_ACTION_CLICK_CREATE_PERSON_ALLOCATION",
       "effectType": "UiSdlEpicShowUiSdlModal",
       "payload": {
         "modal": "PodBalancer.AnalysisPersonAllocationModal"

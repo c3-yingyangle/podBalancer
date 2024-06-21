@@ -1,0 +1,68 @@
+{
+  "type": "UiSdlConnected<UiSdlForm>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "hideFooterButtons": true,
+    "dataSpec": {
+      "fieldSets": {
+        "type": "[UiSdlFormFieldSet]",
+        "value": [
+          {
+            "type": "UiSdlFormFieldSet",
+            "collapsible": false,
+            "fields": [
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "name",
+                "label": "Person Name",
+                "inputElement": {
+                  "type": "UiSdlTextInput",
+                  "placeholder": "",
+                  "fluid": true
+                }
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "email",
+                "label": "Person Email",
+                "inputElement": {
+                  "type": "UiSdlTextInput",
+                  "placeholder": "",
+                  "fluid": true
+                }
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "companyHolidayCalendar",
+                "label": "Company & Location",
+                "inputElement": {
+                  "type": "UiSdlSingleSearch",
+                  "dataSpec" : {
+                    "dataType" : "HolidayCalendar",
+                    "actionName" : "fetch",
+                    "args" : {
+                      "spec" : {
+                        "include" : "id,name"
+                      }
+                    },
+                    "dataPath" : "objs",
+                    "valueField" : "name",
+                    "displayField" : "name"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+// {
+//   "type": "UiSdlConnected<UiSdlEmptyState>",
+//   "component": {
+//     "headerText": {
+//       "dynamicValue": "Form goes here"
+//     }
+//   }
+// }

@@ -6,5 +6,13 @@
     "hoursPerStoryPoint": 8,
     "start": "2023-07-01",
     "end": "2024-07-01"
+  },
+  {
+    "id": "DCI",
+    "name": "DCI",
+    "query": "project=DCI ORDER BY created ASC",
+    "hoursPerStoryPoint": 8,
+    "start": "2023-09-01",
+    "end": "2024-06-01"
   }
 ]

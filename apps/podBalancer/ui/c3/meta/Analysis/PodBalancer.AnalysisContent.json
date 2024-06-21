@@ -2,9 +2,11 @@
   "type": "UiSdlConnected<UiSdlGridLayout>",
   "component": {
     "detachedFields": [
+      { "id": "PodBalancer.AnalysisPersonModal" },
       { "id": "PodBalancer.AnalysisPersonAllocationModal" },
       { "id": "PodBalancer.AnalysisWorkstreamsModal" },
       { "id": "PodBalancer.AnalysisWorkstreamsManageModal" }
+      
     ],
     "gridStyle": "FLUID",
     "gutter": 8,
@@ -17,7 +19,7 @@
             "type": "UiSdlComponentContainer",
             "column": 12,
             "childComponent": {
-              "id": "PodBalancer.AnalysisPersonAllocationDataGrid"
+              "id": "PodBalancer.AnalysisPersonDataGrid"
             }
           },
           {

@@ -1,0 +1,57 @@
+{
+  "type": "UiSdlConnected<UiSdlDataGrid>",
+  "component": {
+    "header": {
+      "title": "People"
+    },
+    "filterBar": true,
+    "defaultPageSize": 10,
+    "paginationConfig": {
+      "pageSize": 10,
+      "pageSizes": [10, 20, 30, 40],
+      "pagination": true
+    },
+    "tableActions": [
+      {
+        "type": "UiSdlActionGroup",
+        "name": "Create Person",
+        "iconSuffix": "plus",
+        "actionSuffix": "CREATE_PERSON"
+      }
+    ],
+    "rowActions": [
+      {
+        "type": "UiSdlActionGroup",
+        "name": "Edit Person Allocation",
+        "iconSuffix": "pen",
+        "actionSuffix": "EDIT_PERSON_ALLOCATION"
+      }
+    ],
+    "dataSpec": {
+      "dataType": "Person",
+      "columnFields": [
+        {
+          "fieldName": "name",
+          "label": "Name",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "company.name",
+          "label": "Company",
+          "sortable": true,
+          "searchable": true
+        }
+      ]
+    }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisPersonDataGrid.TABLE_ACTION_CLICK_CREATE_PERSON",
+      "effectType": "UiSdlEpicShowUiSdlModal",
+      "payload": {
+        "modal": "PodBalancer.AnalysisPersonModal"
+      }
+    }
+  ]
+}

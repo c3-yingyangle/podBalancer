@@ -10,7 +10,7 @@
 * Relation type between {@link Person} and {@link Workstream}
 */
 
-type PersonToWorkstreamAssignment {
+entity type PersonToWorkstreamAssignment {
 
   /**
    * Link to associated {@link Person}
@@ -36,5 +36,8 @@ type PersonToWorkstreamAssignment {
    * % Allocation of {@link Person] to {@linkn Workstream} during given time frame
    */
   allocation: double
+
+  /** Create a person with the specified spec. */
+  createPersonAllocation: function(spec: json): PersonToWorkstreamAssignment js-server
 
 }

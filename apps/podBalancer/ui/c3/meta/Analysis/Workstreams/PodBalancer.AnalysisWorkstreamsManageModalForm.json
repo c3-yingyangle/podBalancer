@@ -100,9 +100,9 @@
     }
   },
   "effectTriggers": [
-    {
-      "trigger": "PodBalancer.AnalysisWorkstreamsManageModal.PRIMARY_BUTTON_CLICK",
-      "effectType": "MergeWorkstreamEpic"
-    }
+    // {
+    //   "trigger": "PodBalancer.AnalysisWorkstreamsManageModal.PRIMARY_BUTTON_CLICK",
+    //   "effectType": "MergeWorkstreamEpic"
+    // }
   ]
 }

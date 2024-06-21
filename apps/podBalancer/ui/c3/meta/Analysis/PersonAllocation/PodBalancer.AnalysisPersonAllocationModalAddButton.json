@@ -1,0 +1,21 @@
+{
+  "type": "UiSdlConnected<UiSdlButton>",
+  "component": {
+    "usage": "primary",
+    "size": "large",
+    "content": "Add Allocation"
+  },
+  "effectTriggers": [
+    {
+      "trigger": "BUTTON_CLICK",
+      "effectType": "CreatePersonEpic"
+    },
+    {
+      "trigger": "BUTTON_CLICK",
+      "effectType": "UiSdlEpicShowUiSdlModal",
+      "payload": {
+        "modal": "PodBalancer.AnalysisPersonAllocationModal"
+      }
+    }
+  ]
+}

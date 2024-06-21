@@ -1,8 +1,75 @@
 {
-  "type": "UiSdlConnected<UiSdlEmptyState>",
+  "type": "UiSdlConnected<UiSdlForm>",
   "component": {
-    "headerText": {
-      "dynamicValue": "Form goes here"
+    "wrapWithMetadataId": true,
+    "hideFooterButtons": true,
+    "dataSpec": {
+      "fieldSets": {
+        "type": "[UiSdlFormFieldSet]",
+        "value": [
+          {
+            "type": "UiSdlFormFieldSet",
+            "collapsible": false,
+            "fields": [
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "workstream",
+                "label": "Workstream",
+                "inputElement": {
+                  "type": "UiSdlSingleSearch",
+                  "dataSpec" : {
+                    "dataType" : "Workstream",
+                    "actionName" : "fetch",
+                    "args" : {
+                      "spec" : {
+                        "include" : "id,name"
+                      }
+                    },
+                    "dataPath" : "objs",
+                    "valueField" : "id",
+                    "displayField" : "name"
+                  }
+                }
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "start",
+                "label": "Start",
+                "inputElement": {
+                  "type": "UiSdlDateTimeInput",
+                  "placeholder": "",
+                  "fluid": true
+                },
+                "dataPropSpecs": [{ "dataPath": "start", "prop": "value" }]
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "end",
+                "label": "End",
+                "inputElement": {
+                  "type": "UiSdlDateTimeInput",
+                  "placeholder": "",
+                  "fluid": true
+                },
+                "dataPropSpecs": [{ "dataPath": "end", "prop": "value" }]
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "allocation",
+                "label": "% Allocation",
+                "inputElement": {
+                  "type": "UiSdlNumberInput",
+                  "placeholder": "",
+                  "fluid": true
+                },
+                "dataPropSpecs": [
+                  { "dataPath": "allocation", "prop": "value" }
+                ]
+              },
+            ]
+          }
+        ]
+      }
     }
   }
 }

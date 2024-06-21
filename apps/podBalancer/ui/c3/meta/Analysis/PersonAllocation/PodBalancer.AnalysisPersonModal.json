@@ -7,7 +7,7 @@
     },
     "modalType": {
       "type": "UiSdlTwoButtonModal",
-      "primaryButtonLabel": "Add Person Allocation",
+      "primaryButtonLabel": "Add Person",
       "primaryButtonStyle": "primary",
       "secondaryButtonLabel": "Cancel",
       "secondaryButtonStyle": "secondary",
@@ -16,14 +16,17 @@
     },
     "children": [
       {
-        "id": "PodBalancer.AnalysisPersonAllocationModalForm"
+        "id": "PodBalancer.AnalysisPersonModalForm"
+      },
+      { 
+        "id": "PodBalancer.AnalysisPersonAllocationDataGrid" 
       }
     ]
   },
   "effectTriggers": [
     {
-      "trigger": "PodBalancer.AnalysisPersonAllocationModal.PRIMARY_BUTTON_CLICK",
-      "effectType": "CreatePersonAllocationEpic"
+      "trigger": "PodBalancer.AnalysisPersonModal.PRIMARY_BUTTON_CLICK",
+      "effectType": "CreatePersonEpic"
     }
   ]
 }

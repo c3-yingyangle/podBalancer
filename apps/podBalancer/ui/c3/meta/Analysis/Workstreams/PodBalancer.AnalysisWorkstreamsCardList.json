@@ -33,27 +33,27 @@
     }
   },
   "effectTriggers": [
-    {
-      "trigger": "PodBalancer.AnalysisWorkstreamsCardList.CARD_ACTION_CLICK_ANALYZE_WORKSTREAM",
-      "effectType": "AnalyzeWorkstreamEpic",
-      "payload": {
-        "applicationStateId": "PodBalancer.PodBalancerApplicationState"
-      },
-      "payloadStrategy": "MERGE"
-    },
-    {
-      "trigger": "PodBalancer.AnalysisWorkstreamsCardList.CARD_ACTION_CLICK_MANAGE_WORKSTREAM",
-      "effectType": "ManageWorkstreamEpic",
-      "payload": {
-        "applicationStateId": "PodBalancer.PodBalancerApplicationState",
-        "modalId": "PodBalancer.AnalysisWorkstreamsManageModal"
-      },
-      "payloadStrategy": "MERGE"
-    },
-    {
-      "trigger": "PodBalancer.AnalysisWorkstreamsCardList.CARD_ACTION_CLICK_REMOVE_WORKSTREAM",
-      "effectType": "RemoveWorkstreamEpic",
-      "payloadStrategy": "MERGE"
-    }
+    // {
+    //   "trigger": "PodBalancer.AnalysisWorkstreamsCardList.CARD_ACTION_CLICK_ANALYZE_WORKSTREAM",
+    //   "effectType": "AnalyzeWorkstreamEpic",
+    //   "payload": {
+    //     "applicationStateId": "PodBalancer.PodBalancerApplicationState"
+    //   },
+    //   "payloadStrategy": "MERGE"
+    // },
+    // {
+    //   "trigger": "PodBalancer.AnalysisWorkstreamsCardList.CARD_ACTION_CLICK_MANAGE_WORKSTREAM",
+    //   "effectType": "ManageWorkstreamEpic",
+    //   "payload": {
+    //     "applicationStateId": "PodBalancer.PodBalancerApplicationState",
+    //     "modalId": "PodBalancer.AnalysisWorkstreamsManageModal"
+    //   },
+    //   "payloadStrategy": "MERGE"
+    // },
+    // {
+    //   "trigger": "PodBalancer.AnalysisWorkstreamsCardList.CARD_ACTION_CLICK_REMOVE_WORKSTREAM",
+    //   "effectType": "RemoveWorkstreamEpic",
+    //   "payloadStrategy": "MERGE"
+    // }
   ]
 }

@@ -40,4 +40,7 @@ entity type Person {
    * The company the person works for (C3, Partner Company, Customer Company)
    */
   company: Company
+
+  /** Create a person with the specified spec. */
+  createPerson: function(spec: json): Person js-server
 }

@@ -6,3 +6,13 @@ function fromIntegrationJson(o) {
     company: { id: "C3 AI" },
   });
 }
+
+
+function createPerson(spec) {
+
+  // let companyHolidayCalendar = HolidayCalendar.forId(spec.companyHolidayCalendar).get('company');
+  // let company = companyHolidayCalendar.company;
+
+
+  return Person.make(spec).upsert();
+}
