@@ -11,22 +11,25 @@
 */
 
 entity type Person {
+  /** Convert from ticket integration json to this type. */
+  fromIntegrationJson: function(o: json): !Person js-server
 
-  /**
-   * Email associated with the {@link Person}
-   */
+  /** Someone's full name. */
+  name: string
+
+  /** The person's email. */
   email: string
-  
+
   /**
    * Email associated with the {@link Person}
    */
-  // tickets: [Issue](assignee, name)
+  tickets: [Issue](person)
 
   /**
-   * Relation type between {@link Person} and {@link Workstream} with the extra detail of specifying the 
+   * Relation type between {@link Person} and {@link Workstream} with the extra detail of specifying the
    * allocation of their assignment on that workstream
    */
-  // assignments: [PersonToWorkstreamAssignment]()
+  assignments: [PersonToWorkstreamAssignment](person)
 
   /**
    * Time overrides for a person whether that is PTO, Sick Days, Working Weekends, Working into evenings

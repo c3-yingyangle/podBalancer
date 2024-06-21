@@ -1,0 +1,15 @@
+{
+  "type": "UiSdlConnected<UiSdlLayoutNavigation>",
+  "component": {
+    "pageId": "overview",
+    "navigation": {
+      "id": "PodBalancer.ApplicationNavMenu"
+    },
+    "pageTitle": {
+      "id": "PodBalancer.PageTitle"
+    }
+    // "content": {
+    //   "id": "PodBalancer.OverviewSidePanelContainer"
+    // }
+  }
+}
