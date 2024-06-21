@@ -12,9 +12,11 @@ function getDatesBetween(start, end) {
 }
 
 function evalMetrics(spec) {
+  var workstreamId = spec.ids[0];
+
   // Get allocated hours per day
   var allocationHours = Workstream.getWorkstreamAllocationHours(
-    Workstream.forId("DLACLIX"),
+    Workstream.forId(workstreamId),
     DateTime.fromString(spec.start),
     DateTime.fromString(spec.end)
   );
@@ -25,7 +27,7 @@ function evalMetrics(spec) {
   // Replace To Do future data with projected line
   var today = DateTime.now();
   var metricData = Js.toNativeObject(
-    metricResult.result.get("DLACLIX").get("TotalHoursToDo")._data
+    metricResult.result.get(workstreamId).get("TotalHoursToDo")._data
   );
   var dates = allocationHours.dates;
   var totalHoursToDo = metricData[metricData.length - 1];
@@ -46,12 +48,10 @@ function evalMetrics(spec) {
   var ts = Timeseries.fromValues(tsInfo, metricData);
   return {
     result: metricResult.result.with(
-      "DLACLIX",
-      metricResult.result.get("DLACLIX").with("TotalHoursToDo", ts)
+      workstreamId,
+      metricResult.result.get(workstreamId).with("TotalHoursToDo", ts)
     ),
     errors: metricResult.errors,
     translations: metricResult.translations,
   };
-
-  return metricResult;
 }
