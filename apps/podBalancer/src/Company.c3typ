@@ -18,8 +18,8 @@ entity type Company {
   employees: [Person](company)
   
   /**
-   * default holiays provided to {@link Person}s by this {@link Company}
+   * The set of holiday calendars recognized by this Company
    */
-  holidays: [HolidayToCompanyRelation](company)
+  holidayCalendars: [HolidayCalendar](company)
 
 }

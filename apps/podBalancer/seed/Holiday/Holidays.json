@@ -1,0 +1,162 @@
+[
+    {
+        "id": "2024-01-01_C3_US",
+        "name": "US New Year's Day, 2024",
+        "date": "2024-01-01",
+        "calendar": {
+            "id": "C3 AI US"
+        }
+    },
+    {
+        "id": "2024-02-19_C3_US",
+        "name": "US President's Day, 2024",
+        "date": "2024-02-19",
+        "calendar": {
+            "id": "C3 AI US"
+        }
+    },
+    {
+        "id": "2024-03-29_C3_US",
+        "name": "US Good Friday, 2024",
+        "date": "2024-03-29",
+        "calendar": {
+            "id": "C3 AI US"
+        }
+    },
+    {
+        "id": "2024-05-27_C3_US",
+        "name": "US Memorial Day, 2024",
+        "date": "2024-05-27",
+        "calendar": {
+            "id": "C3 AI US"
+        }
+    },
+    {
+        "id": "2024-07-04_C3_US",
+        "name": "US Independence Day, 2024",
+        "date": "2024-07-04",
+        "calendar": {
+            "id": "C3 AI US"
+        }
+    },
+    {
+        "id": "2024-09-02_C3_US",
+        "name": "US Labor Day, 2024",
+        "date": "2024-09-02",
+        "calendar": {
+            "id": "C3 AI US"
+        }
+    },
+    {
+        "id": "2024-11-28_C3_US",
+        "name": "US Thanksgiving Day, 2024",
+        "date": "2024-11-28",
+        "calendar": {
+            "id": "C3 AI US"
+        }
+    },
+    {
+        "id": "2024-11-29_C3_US",
+        "name": "US Day After Thanksgiving, 2024",
+        "date": "2024-11-29",
+        "calendar": {
+            "id": "C3 AI US"
+        }
+    },
+    {
+        "id": "2024-12-24_C3_US",
+        "name": "US Christmas Eve, 2024",
+        "date": "2024-12-24",
+        "calendar": {
+            "id": "C3 AI US"
+        }
+    },
+    {
+        "id": "2024-12-25_C3_US",
+        "name": "US Christmas Day, 2024",
+        "date": "2024-12-25",
+        "calendar": {
+            "id": "C3 AI US"
+        }
+    },
+    {
+        "id": "2024-01-01_Paradyme_US",
+        "name": "US New Year's Day, 2024",
+        "date": "2024-01-01",
+        "calendar": {
+            "id": "Paradyme US"
+        }
+    },
+    {
+        "id": "2024-02-19_Paradyme_US",
+        "name": "US President's Day, 2024",
+        "date": "2024-02-19",
+        "calendar": {
+            "id": "Paradyme US"
+        }
+    },
+    {
+        "id": "2024-03-29_Paradyme_US",
+        "name": "US Good Friday, 2024",
+        "date": "2024-03-29",
+        "calendar": {
+            "id": "Paradyme US"
+        }
+    },
+    {
+        "id": "2024-05-27_Paradyme_US",
+        "name": "US Memorial Day, 2024",
+        "date": "2024-05-27",
+        "calendar": {
+            "id": "Paradyme US"
+        }
+    },
+    {
+        "id": "2024-07-04_Paradyme_US",
+        "name": "US Independence Day, 2024",
+        "date": "2024-07-04",
+        "calendar": {
+            "id": "Paradyme US"
+        }
+    },
+    {
+        "id": "2024-09-02_Paradyme_US",
+        "name": "US Labor Day, 2024",
+        "date": "2024-09-02",
+        "calendar": {
+            "id": "Paradyme US"
+        }
+    },
+    {
+        "id": "2024-11-28_Paradyme_US",
+        "name": "US Thanksgiving Day, 2024",
+        "date": "2024-11-28",
+        "calendar": {
+            "id": "Paradyme US"
+        }
+    },
+    {
+        "id": "2024-11-29_Paradyme_US",
+        "name": "US Day After Thanksgiving, 2024",
+        "date": "2024-11-29",
+        "calendar": {
+            "id": "Paradyme US"
+        }
+    },
+    {
+        "id": "2024-12-24_Paradyme_US",
+        "name": "US Christmas Eve, 2024",
+        "date": "2024-12-24",
+        "calendar": {
+            "id": "Paradyme US"
+        }
+    },
+    {
+        "id": "2024-12-25_Paradyme_US",
+        "name": "US Christmas Day, 2024",
+        "date": "2024-12-25",
+        "calendar": {
+            "id": "Paradyme US"
+        }
+    }
+]

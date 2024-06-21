@@ -17,4 +17,8 @@ entity type Holiday {
    */
   date: datetime
 
+  /**
+   * The date of the holiday
+   */
+  calendar: HolidayCalendar
 }
