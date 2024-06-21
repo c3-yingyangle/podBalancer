@@ -1,0 +1,8 @@
+/**
+* Pod.c3typ
+*
+* Placeholder
+*/
+type Pod {
+  getHeaderStats: function(): json js-server
+}

@@ -1,0 +1,7 @@
+{
+  "type": "UiSdlConnected<UiSdlContainer>",
+  "component": {
+    "title": "Workstream Analysis",
+    "children": [{ "id": "PodBalancer.AnalysisHeaderDefinitionList" }]
+  }
+}

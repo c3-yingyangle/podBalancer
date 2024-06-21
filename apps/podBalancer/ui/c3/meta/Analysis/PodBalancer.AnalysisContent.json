@@ -1,6 +1,7 @@
 {
   "type": "UiSdlConnected<UiSdlGridLayout>",
   "component": {
+    "wrapWithMetadataId": true,
     "detachedFields": [
       { "id": "PodBalancer.AnalysisPersonAllocationModal" },
       { "id": "PodBalancer.AnalysisWorkstreamsModal" },
@@ -9,6 +10,22 @@
     "gridStyle": "FLUID",
     "gutter": 8,
     "display": "HORIZONTAL",
+    "header": {
+      "children": [
+        {
+          "type": "UiSdlGridContainer",
+          "children": [
+            {
+              "type": "UiSdlComponentContainer",
+              "column": 12,
+              "childComponent": {
+                "id": "PodBalancer.AnalysisHeaderContainer"
+              }
+            }
+          ]
+        }
+      ]
+    },
     "children": [
       {
         "type": "UiSdlGridContainer",
