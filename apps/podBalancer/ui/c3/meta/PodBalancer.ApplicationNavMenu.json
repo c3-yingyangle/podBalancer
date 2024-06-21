@@ -1,0 +1,27 @@
+{
+  "type": "UiSdlConnected<UiSdlNavMenu>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "logoImageUrl": "assets/images/menu/logo.svg",
+    "itemSections": [
+      {
+        "items": [
+          {
+            "id": "overviewpage",
+            "icon": "home",
+            "redirectRoute": {
+              "urlPath": "/overview"
+            }
+          },
+          {
+            "id": "personpage",
+            "icon": "home",
+            "redirectRoute": {
+              "urlPath": "/person"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
