@@ -1,7 +1,7 @@
 {
   "type": "UiSdlConnected<UiSdlModal>",
   "component": {
-    "size": "MEDIUM",
+    "size": "SMALL",
     "header": { "text": "Manage Workstream" },
     "modalType": {
       "type": "UiSdlTwoButtonModal",

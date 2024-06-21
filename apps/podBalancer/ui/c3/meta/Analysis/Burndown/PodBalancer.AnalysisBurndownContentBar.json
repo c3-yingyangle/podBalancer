@@ -4,6 +4,7 @@
     "color": "#151618",
     "editableTitle": false,
     "title": "Burndown",
-    "inputs": [{ "id": "PodBalancer.AnalysisBurndownChartIntervalButton" }]
+    "inputs": [{ "id": "PodBalancer.AnalysisBurndownChartIntervalButton" }],
+    "actions": [{ "id": "PodBalancer.AnalysisBurndownChartViewIssuesButton" }]
   }
 }
