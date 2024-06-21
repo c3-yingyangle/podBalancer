@@ -4,6 +4,11 @@
 * A workstream within the application.
 */
 extendable entity type Workstream {
+  /** Refresh all issues by fetching from JIRA.
+  *
+  * Returns the number of fetched issues. */
+  refreshIssues: member function(limit: int = 100): int js-server
+
   /** Name of the project. */
   name: ~
 
@@ -15,6 +20,9 @@ extendable entity type Workstream {
 
   /** JQL query to retrieve issues for this workstream. */
   query: string
+
+  /** Conversion rate from story points to hour. */
+  hoursPerStoryPoint: double
 
   /** Story points completed in this workstream. */
   storyPointsCompleted: double

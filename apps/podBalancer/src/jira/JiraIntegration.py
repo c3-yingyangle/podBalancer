@@ -86,9 +86,9 @@ def __get_issues(
     )
 
     # Only query as much as we need.
-    if limit > 0:
+    if limit and limit > 0:
         total = min(total, limit)
-    subbatch_limit = min(subbatch_limit, limit)
+        subbatch_limit = min(subbatch_limit, limit)
 
     # TPE to parallelize requests.
     futures: List[Future[Tuple[Dict[str, Any], int]]] = []
