@@ -14,6 +14,13 @@
             }
           },
           {
+            "id": "analysis",
+            "icon": "home",
+            "redirectRoute": {
+              "urlPath": "/analysis"
+            }
+          },
+          {
             "id": "personpage",
             "icon": "home",
             "redirectRoute": {

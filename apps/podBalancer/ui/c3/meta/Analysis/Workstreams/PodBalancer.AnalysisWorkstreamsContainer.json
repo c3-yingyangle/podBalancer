@@ -1,0 +1,24 @@
+{
+    "type": "UiSdlConnected<UiSdlLayoutContainer>",
+    "component": {
+      "wrapWithMetadataId": true,
+      "children": [
+        [
+          {
+            "id": "PodBalancer.AnalysisWorkstreamsFilterButton",
+            "width": 90
+          },
+          {
+            "id": "PodBalancer.AnalysisWorkstreamsCreateButton",
+            "width": 10
+          }
+        ],
+        [
+          {
+            "id": "PodBalancer.AnalysisWorkstreamsCardList",
+            "width": 100
+          }
+        ]
+      ]
+    }
+  }

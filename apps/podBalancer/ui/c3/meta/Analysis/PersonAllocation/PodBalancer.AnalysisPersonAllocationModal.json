@@ -1,0 +1,23 @@
+{
+  "type": "UiSdlConnected<UiSdlModal>",
+  "component": {
+    "size": "MEDIUM",
+    "header": {
+      "text": "Add Person"
+    },
+    "modalType": {
+      "type": "UiSdlTwoButtonModal",
+      "primaryButtonLabel": "Add Person",
+      "primaryButtonStyle": "primary",
+      "secondaryButtonLabel": "Cancel",
+      "secondaryButtonStyle": "secondary",
+      "closeModalOnPrimaryButtonClick": true,
+      "closeModalOnSecondaryButtonClick": true
+    },
+    "children": [
+      {
+        "id": "PodBalancer.AnalysisPersonAllocationModalForm"
+      }
+    ]
+  }
+}

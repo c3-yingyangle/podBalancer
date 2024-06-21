@@ -1,0 +1,22 @@
+{
+  "type": "UiSdlConnected<UiSdlAtomicSegmentedButton>",
+  "component": {
+    "mode": "single-select",
+    "status": "none",
+    "minOneSelected": true,
+    "value": ["DAY"],
+    "layout": "fixed",
+    "buttons": [
+      {
+        "label": "Day",
+        "icon": "clock",
+        "value": "DAY"
+      },
+      {
+        "label": "Week",
+        "icon": "clock",
+        "value": "WEEK"
+      }
+    ]
+  }
+}

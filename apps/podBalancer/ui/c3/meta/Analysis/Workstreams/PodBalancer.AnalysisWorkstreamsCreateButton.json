@@ -1,0 +1,18 @@
+{
+  "type": "UiSdlConnected<UiSdlButton>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "usage": "icon",
+    "size": "large",
+    "iconClass": "c3-button-plus"
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisWorkstreamsCreateButton.BUTTON_CLICK",
+      "effectType": "UiSdlEpicShowUiSdlModal",
+      "payload": {
+        "modal": "PodBalancer.AnalysisWorkstreamsModal"
+      }
+    }
+  ]
+}
