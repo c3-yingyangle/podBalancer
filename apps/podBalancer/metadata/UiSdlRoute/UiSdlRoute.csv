@@ -1,5 +1,3 @@
 targetModuleName,targetPageName,name,urlPath
-PodBalancer,OverviewPage,/,/
-PodBalancer,OverviewPage,/overview,/overview
+PodBalancer,AnalysisPage,/,/
 PodBalancer,AnalysisPage,/analysis,/analysis
-PodBalancer,PersonPage,/person,/person
