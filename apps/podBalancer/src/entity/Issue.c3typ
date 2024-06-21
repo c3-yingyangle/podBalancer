@@ -7,11 +7,8 @@ entity type Issue {
   /** Convert from integration json to this type. */
   fromIntegrationJson: inline function(workstreamId: !string, o: !json): !Issue js
 
-  /** Name of assignee */
-  assignee: string
-
-  // /** User/person associated with the ticket. */
-  // person: Person(assignee, name)
+  /** User/person associated with the ticket. */
+  person: Person
 
   /** Project key, like "EW". */
   project: string
@@ -30,6 +27,9 @@ entity type Issue {
 
   /** The status category of the ticket. */
   statusCategory: string
+
+  /** Date/time of creation. */
+  creationDate: datetime
 
   /** Date/time of resolution. */
   resolution: datetime
