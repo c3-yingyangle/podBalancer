@@ -13,7 +13,9 @@
       "plugin:@c3/typescript",
       "plugin:prettier/recommended"
     ],
-    "plugins": ["@c3"],
+    "plugins": [
+      "@c3"
+    ],
     "rules": {
       "@typescript-eslint/no-unused-vars": [
         "warn",

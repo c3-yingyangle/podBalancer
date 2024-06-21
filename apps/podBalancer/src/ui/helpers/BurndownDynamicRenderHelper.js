@@ -27,7 +27,7 @@ function generateEmptyState() {
 function generateChart(workstream, interval) {
   var chartStartDate = workstream.start;
   // TODO: set end date to the last datetime in all our timeseries
-  var chartEndDate = workstream.end.plusDays(60);
+  var chartEndDate = workstream.end.plusDays(90);
 
   var workstreamDueDate = workstream.end;
 
@@ -78,7 +78,7 @@ function generateChart(workstream, interval) {
         },
       ],
       dataSpec: {
-        dataType: "Workstream",
+        dataType: "UiHelper",
         yAxisFields: [
           {
             legendLabel: "Cumulative Total",

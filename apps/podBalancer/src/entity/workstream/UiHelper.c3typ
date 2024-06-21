@@ -1,0 +1,8 @@
+/**
+* UiHelper.c3typ
+*/
+
+type UiHelper mixes FeatureEvaluatable {
+  // override function for UI
+  evalMetrics: function(spec: json): EvalMetricsResult js-rhino
+}
