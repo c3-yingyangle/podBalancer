@@ -1,0 +1,7 @@
+// Glob import for any custom base stylesheets.
+// TODO: PLAT-66481 Remove .ui.page.modals once modals support page-specific styles.
+.base-css-page-container,
+.ui.page.modals {
+  @import '@c3/ui/*_base.scss'
+
+}

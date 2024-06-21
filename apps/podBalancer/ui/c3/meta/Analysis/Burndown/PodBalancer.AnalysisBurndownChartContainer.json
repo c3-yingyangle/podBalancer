@@ -1,20 +1,17 @@
 {
-    "type": "UiSdlConnected<UiSdlLayoutContainer>",
-    "component": {
-      "wrapWithMetadataId": true,
-      "children": [
-        [
-          {
-            "id": "PodBalancer.AnalysisBurndownChartIntervalButton",
-            "width": 100
-          }
-        ],
-        [
-          {
-            "id": "PodBalancer.AnalysisBurndownChart",
-            "width": 100
-          }
-        ]
-      ]
-    }
+  "type": "UiSdlConnected<UiSdlContentFrame>",
+  "component": {
+    "showTop": true,
+    "showBottom": false,
+    "topBar": { "id": "PodBalancer.AnalysisBurndownContentBar" },
+    "content": [
+      {
+        "type": "UiSdlComponentContainer",
+        "column": 12,
+        "childComponent": {
+          "id": "PodBalancer.AnalysisBurndownChart"
+        }
+      }
+    ]
   }
+}

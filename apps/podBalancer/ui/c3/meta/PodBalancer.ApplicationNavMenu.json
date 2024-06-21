@@ -7,27 +7,11 @@
       {
         "items": [
           {
-            "id": "overviewpage",
-            "title": "Overview",
-            "icon": "home",
-            "redirectRoute": {
-              "urlPath": "/overview"
-            }
-          },
-          {
             "id": "analysis",
             "title": "Analysis",
             "icon": "chart-mixed",
             "redirectRoute": {
-              "urlPath": "/analysis"
-            }
-          },
-          {
-            "id": "personpage",
-            "title": "Resources",
-            "icon": "user",
-            "redirectRoute": {
-              "urlPath": "/person"
+              "urlPath": "/"
             }
           }
         ]

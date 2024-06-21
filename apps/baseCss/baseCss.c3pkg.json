@@ -1,0 +1,7 @@
+{
+  "name": "baseCss",
+  "author": "TJ-CL",
+  "description": "Package to include for the purpose of custom css styling in c3 applications.",
+  "dependencies": { "uiInfrastructureReact": "*" },
+  "version": "8.3.3"
+}

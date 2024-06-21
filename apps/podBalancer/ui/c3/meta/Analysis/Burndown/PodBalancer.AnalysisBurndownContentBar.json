@@ -1,0 +1,10 @@
+{
+  "type": "UiSdlConnected<UiSdlContentFrameTopBar>",
+  "component": {
+    "color": "#151618",
+    "editableTitle": false,
+    "title": "Burndown",
+    "inputs": [{ "id": "PodBalancer.AnalysisBurndownChartIntervalButton" }],
+    "actions": [{ "id": "PodBalancer.AnalysisBurndownChartViewIssuesButton" }]
+  }
+}

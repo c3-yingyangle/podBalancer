@@ -1,42 +1,49 @@
 {
-  "type": "UiSdlConnected<UiSdlLayoutContainer>",
+  "type": "UiSdlConnected<UiSdlGridLayout>",
   "component": {
-    "wrapWithMetadataId": true,
+    "detachedFields": [
+      { "id": "PodBalancer.AnalysisPersonAllocationModal" },
+      { "id": "PodBalancer.AnalysisWorkstreamsModal" },
+      { "id": "PodBalancer.AnalysisWorkstreamsManageModal" }
+    ],
+    "gridStyle": "FLUID",
+    "gutter": 8,
+    "display": "HORIZONTAL",
     "children": [
-      [
-        {
-          "id": "PodBalancer.AnalysisPersonAllocationDataGrid",
-          "width": 100
-        }
-      ],
-      [
-        {
-          "id": "PodBalancer.AnalysisWorkstreamsContentFrame",
-          "width": 40
-        },
-        {
-          "id": "PodBalancer.AnalysisBurndownChartContainer",
-          "width": 60
-        }
-      ],
-      [
-        {
-          "id": "PodBalancer.AnalysisPersonAllocationModal",
-          "width": 100
-        }
-      ],
-      [
-        {
-          "id": "PodBalancer.AnalysisWorkstreamsModal",
-          "width": 100
-        }
-      ],
-      [
-        {
-          "id": "PodBalancer.AnalysisWorkstreamsManageModal",
-          "width": 100
-        }
-      ]
+      {
+        "type": "UiSdlGridContainer",
+        "children": [
+          {
+            "type": "UiSdlComponentContainer",
+            "column": 12,
+            "childComponent": {
+              "id": "PodBalancer.AnalysisPersonAllocationDataGrid"
+            }
+          },
+          {
+            "type": "UiSdlGridContainer",
+            "column": 12,
+            "gridStyle": "FLUID",
+            "gutter": 8,
+            "display": "HORIZONTAL",
+            "children": [
+              {
+                "type": "UiSdlComponentContainer",
+                "column": 4,
+                "childComponent": {
+                  "id": "PodBalancer.AnalysisWorkstreamsContentFrame"
+                }
+              },
+              {
+                "type": "UiSdlComponentContainer",
+                "childComponent": {
+                  "id": "PodBalancer.AnalysisBurndownChartContainer"
+                }
+              }
+            ]
+          }
+        ]
+      }
     ]
   }
 }
