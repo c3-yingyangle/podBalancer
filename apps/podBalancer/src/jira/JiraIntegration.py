@@ -121,6 +121,7 @@ def __get_issues(
         parent_summary = __drill(issue, ["fields", "parent", "fields", "summary"], "")
         story_points = __drill(issue, ["fields", "customfield_13127"], 0.0)
         assignee = __drill(issue, ["fields", "assignee", "displayName"], "")
+        assignee_email = __drill(issue, ["fields", "assignee", "emailAddress"], "")
         fix_versions = list(
             map(
                 lambda fv: __drill(fv, ["name"]),
@@ -129,6 +130,7 @@ def __get_issues(
         )
         labels = __drill(issue, ["fields", "labels"], "")
         resolution_date = __drill(issue, ["fields", "resolutiondate"], "")
+        creation_date = __drill(issue, ["fields", "created"], "")
 
         row_dicts.append(
             {
@@ -141,9 +143,11 @@ def __get_issues(
                 "Parent summary": parent_summary,
                 "Custom field (Story point estimate)": story_points,
                 "Assignee": assignee,
+                "Assignee Email": assignee_email,
                 "Fix Versions": fix_versions,
                 "Priority ID": priority_id,
                 "Labels": labels,
+                "Creation Date": creation_date,
                 "Resolution Date": resolution_date,
                 "__issue": issue,
             }

@@ -8,5 +8,25 @@ function refreshIssues(limit) {
     return Issue.fromIntegrationJson(_this.id, o);
   });
 
+  // Also create people here.
+  let person = _.chain(issuesObjs)
+    .map((o) => {
+      return {
+        Assignee: o["Assignee"],
+        "Assignee Email": o["Assignee Email"],
+      };
+    })
+    .filter((o) => {
+      return o["Assignee Email"] && o["Assignee"];
+    })
+    .uniq(undefined, (o) => {
+      return JSON.stringify(o);
+    })
+    .map((o) => {
+      return Person.fromIntegrationJson(o);
+    })
+    .value();
+  Person.mergeBatch(person);
+
   return Issue.upsertBatch(issues)?.count();
 }
