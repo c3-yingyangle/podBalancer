@@ -1,9 +1,49 @@
-
 {
-  "type": "UiSdlConnected<UiSdlEmptyState>",
+  "type": "UiSdlConnected<UiSdlDataGrid>",
   "component": {
-    "headerText": {
-      "dynamicValue": "Grid goes here"
+    "header": {
+      "title": "Person Allocation"
+    },
+    "filterBar": true,
+    "defaultPageSize": 10,
+    "paginationConfig": {
+      "pageSize": 10,
+      "pageSizes": [10, 20, 30, 40],
+      "pagination": true
+    },
+    "tableActions": [
+      {
+        "type": "UiSdlActionGroup",
+        "name": "Create Person",
+        "iconSuffix": "plus",
+        "actionSuffix": "CREATE_PERSON"
+      }
+    ],
+    "dataSpec": {
+      "dataType": "Person",
+      "columnFields": [
+        {
+          "fieldName": "name",
+          "label": "Name",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "company.name",
+          "label": "Company",
+          "sortable": true,
+          "searchable": true
+        }
+      ]
     }
-  }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisPersonAllocationDataGrid.TABLE_ACTION_CLICK_CREATE_PERSON",
+      "effectType": "UiSdlEpicShowUiSdlModal",
+      "payload": {
+        "modal": "PodBalancer.AnalysisPersonAllocationModal"
+      }
+    }
+  ]
 }
