@@ -1,6 +1,0 @@
-/**
-* ReleaseWorkstream.c3typ
-*
-* Workstream for a release.
-*/
-entity type ReleaseWorkstream mixes Workstream type key "RLS"

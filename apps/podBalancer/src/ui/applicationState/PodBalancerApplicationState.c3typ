@@ -31,4 +31,14 @@ type PodBalancerApplicationState mixes UiSdlApplicationState {
   @uiSdlReducer(actionType='STORE_MANAGE_WORKSTREAM')
   @typeScript(env="client")
   storeManageWorkstreamReducer: private inline function(state: !UiSdlReduxState, action: UiSdlReduxAction): UiSdlReduxState ts-client
+
+  // listens for actions of type STORE_PERSON
+  @uiSdlActionCreator(actionType='STORE_PERSON')
+  @typeScript(env="client")
+  storeCurrentPersonAction: function(id: string, obj: json): UiSdlReduxAction ts-client
+
+  // stores current {@link Person} in application state
+  @uiSdlReducer(actionType='STORE_PERSON')
+  @typeScript(env="client")
+  storeCurrenPersonReducer: private inline function(state: !UiSdlReduxState, action: UiSdlReduxAction): UiSdlReduxState ts-client
 }

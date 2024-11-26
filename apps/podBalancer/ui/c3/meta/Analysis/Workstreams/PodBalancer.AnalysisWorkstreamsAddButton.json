@@ -10,7 +10,7 @@
       "trigger": "PodBalancer.AnalysisWorkstreamsAddButton.BUTTON_CLICK",
       "effectType": "UiSdlEpicShowUiSdlModal",
       "payload": {
-        "modal": "PodBalancer.AnalysisWorkstreamsModal"
+        "modal": "PodBalancer.CreateWorkstreamModal"
       }
     }
   ]

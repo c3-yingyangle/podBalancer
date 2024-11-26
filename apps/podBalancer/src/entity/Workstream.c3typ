@@ -1,0 +1,110 @@
+/*
+ * Copyright 2009-2024 C3 AI (www.c3.ai). All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3 and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3 and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
+/**
+ * Workstream.c3typ
+ * A workstream within a {@link Project}.
+ */
+
+extendable entity type Workstream mixes FeatureEvaluatable {
+  /**
+   * Project that this workstream belongs to.
+   */
+  project: Project
+
+  /**
+   * Name of this workstream.
+   */
+  name: ~
+
+  /**
+   * Start date of this workstream.
+   */
+  start: date
+
+  /**
+   * End date of this workstream.
+   */
+  end: date
+
+  /**
+   * JQL query used to retrieve {@link Issue}s for this workstream.
+   */
+  query: string
+
+  /**
+   * Conversion rate from story points to hour for this workstream.
+   */
+  hoursPerStoryPoint: double
+
+  /**
+   * Collection of {@link Issue}s under this workstream.
+   */
+  issues: [Issue] (workstream)
+
+  /**
+   * Create a workstream with the specified spec.
+   */
+  createWorkstream: function(spec: json): Workstream js-server
+
+  /**
+   * Refresh all issues by fetching from JIRA. Returns the number of fetched issues.
+   */
+  refreshIssues: member function(limit: int = 100): int js-server
+
+  /**
+   * Get percentage allocation of a given {@link Person} each day in a given time frame.
+   * Does not take into account PTO, holidays, and weekends.
+   */
+  getPersonAllocationPct: function(person: Person, workstream: Workstream, start: datetime, end: datetime): json js-server
+
+  /**
+   * Get number of hours a given {@link Person} is working each day in a given time frame.
+   * Takes into account the person's allocation percentage, PTO, holidays, and weekends.
+   */
+  getPersonAllocationHours: function(person: Person, workstream: Workstream, start: datetime, end: datetime): json js-server
+
+  /**
+   * Get total hours that all allocated {@link Person}s are working each day in a given time frame.
+   * Takes into account everyone's allocation percentage, PTO, holidays, and weekends.
+   */
+  getWorkstreamAllocationHours: function(workstream: Workstream, start: datetime, end: datetime): json js-server
+
+  /**
+   * Get number of FTE {@link Person}s allocated to this workstream for each day in a given time frame.
+   * Takes into account everyone's allocation percentage, PTO, holidays, and weekends.
+   */
+  getWorkstreamAllocationPct: function(workstream: Workstream, start: datetime, end: datetime): json js-server
+
+  getExpectedHoursCompleted: function(obj: Obj, spec: TSEvalSpec, metric: Metric): Timeseries<!double> js-rhino
+
+  getExpectedPointsCompleted: function(obj: Obj, spec: TSEvalSpec, metric: Metric): Timeseries<!double> js-rhino
+  
+  getTotalHoursCreated: function(obj: Obj, spec: TSEvalSpec, metric: Metric): Timeseries<!double> js-rhino
+
+  getTotalHoursCompleted: function(obj: Obj, spec: TSEvalSpec, metric: Metric): Timeseries<!double> js-rhino
+
+  /**
+   * String representation of range of this workstream.
+   */
+  humanDateRange: string calc concat(year(start), "-", month(start), "-", day(start), ' to ', year(end), "-", month(end), "-", day(end))
+
+  /**
+   * Story points completed in this workstream.
+   */
+  hoursCompleted: double calc sum(issues.(statusCategory == "Done").storyPoints) * hoursPerStoryPoint
+
+  /**
+   * Story points remaining in the workstream.
+   */
+  hoursRemaining: double calc sum(issues.(statusCategory != "Done").storyPoints) * hoursPerStoryPoint
+
+  hoursRemainingMinusAllocation: int calc calcWorkstreamHoursRemaining(id)
+
+  pointsRemainingMinusAllocation: int calc hoursRemainingMinusAllocation / 8
+}

@@ -45,7 +45,7 @@ export function epic(
             ),
             of(
               openCloseModalAction(
-                "PodBalancer.AnalysisWorkstreamsManageModal",
+                "PodBalancer.ManageWorkstreamModal",
                 false
               )
             ),
@@ -53,13 +53,13 @@ export function epic(
             // Renable button
             of(
               setDisabledAction(
-                "PodBalancer.AnalysisWorkstreamsManageModalRemoveButton",
+                "PodBalancer.ManageWorkstreamModalRemoveButton",
                 false
               )
             ),
             of(
               setLoadingAction(
-                "PodBalancer.AnalysisWorkstreamsManageModalRemoveButton",
+                "PodBalancer.ManageWorkstreamModalRemoveButton",
                 false
               )
             ),

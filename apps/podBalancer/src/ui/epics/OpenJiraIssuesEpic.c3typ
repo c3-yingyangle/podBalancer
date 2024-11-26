@@ -11,4 +11,4 @@
  */
 
 @typeScript
-type OpenJiraIssuesEpic extends UiSdlEpic
+type OpenJiraIssuesEpic mixes UiSdlEpic

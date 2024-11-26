@@ -1,0 +1,47 @@
+{
+  "type": "UiSdlConnected<UiSdlDataGrid>",
+  "component": {
+    "header": {
+      "title": "Staffing Per Week"
+    },
+    "filterBar": true,
+    "defaultPageSize": 10,
+    "paginationConfig": {
+      "pageSize": 10,
+      "pageSizes": [10, 20, 30, 40],
+      "pagination": true
+    },
+    "tableActions": [
+      {
+        "type": "UiSdlActionGroup",
+        "name": "Create Person",
+        "iconSuffix": "plus",
+        "actionSuffix": "CREATE_PERSON"
+      }
+    ],
+    "dataSpec": {
+      "dataType": "Person",
+      "contextVars": {
+        "assignments.workstream.id": {
+          "type": "UiSdlApplicationStateValueParam",
+          "id": "PodBalancer.PodBalancerApplicationState",
+          "path": "selectedWorkstream.id"
+        }
+      },
+      "columnFields": [
+        {
+          "fieldName": "name",
+          "label": "Name",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "company.name",
+          "label": "Company",
+          "sortable": true,
+          "searchable": true
+        }
+      ]
+    }
+  }
+}

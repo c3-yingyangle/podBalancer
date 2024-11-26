@@ -1,8 +1,0 @@
-{
-  "type": "UiSdlConnected<UiSdlEmptyState>",
-  "component": {
-    "headerText": {
-      "dynamicValue": "Form goes here"
-    }
-  }
-}

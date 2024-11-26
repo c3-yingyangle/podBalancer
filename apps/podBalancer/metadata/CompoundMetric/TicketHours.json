@@ -1,17 +1,37 @@
 [
   {
-    "id":"CumulativeHoursCreated",
-    "name":"CumulativeHoursCreated",
-    "expression": "rolling('SUM', HoursCreated)"
+    "id":"CumulativeExpectedHoursCompleted",
+    "name":"CumulativeExpectedHoursCompleted",
+    "expression": "rolling('SUM', ExpectedHoursCompleted)"
   },
   {
-    "id":"CumulativeHoursCompleted",
-    "name":"CumulativeHoursCompleted",
-    "expression": "rolling('SUM', HoursCompleted)"
+    "id":"TotalActualHoursRemaining",
+    "name":"TotalActualHoursRemaining",
+    "expression": "CumulativeHoursCreated - CumulativeActualHoursCompleted"
   },
   {
-    "id":"TotalHoursToDo",
-    "name":"TotalHoursToDo",
-    "expression": "CumulativeHoursCreated - CumulativeHoursCompleted"
+    "id":"TotalExpectedHoursRemaining",
+    "name":"TotalExpectedHoursRemaining",
+    "expression": "CumulativeHoursCreated - CumulativeExpectedHoursCompleted"
+  },
+  {
+    "id":"CumulativePointsCreated",
+    "name":"CumulativePointsCreated",
+    "expression": "CumulativeHoursCreated / 8"
+  },
+  {
+    "id":"CumulativeActualPointsCompleted",
+    "name":"CumulativeActualPointsCompleted",
+    "expression": "CumulativeActualHoursCompleted / 8"
+  },
+  {
+    "id":"TotalActualPointsRemaining",
+    "name":"TotalActualPointsRemaining",
+    "expression": "TotalActualHoursRemaining / 8"
+  },
+  {
+    "id":"TotalExpectedPointsRemaining",
+    "name":"TotalExpectedPointsRemaining",
+    "expression": "TotalExpectedHoursRemaining / 8"
   }
 ]

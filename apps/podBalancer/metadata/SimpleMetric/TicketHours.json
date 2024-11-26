@@ -5,22 +5,78 @@
     "srcType":"Workstream",
     "tsDecl":{
       "data":"issues",
-      "start":"creationDate",
+      "start":"dateCreated",
       "value":"hours",
       "treatment":"SUM",
       "overlapHandling": "SUM"
     }
   },
   {
-    "id":"HoursCompleted_Workstream",
-    "name":"HoursCompleted",
+    "id":"ActualHoursCompleted_Workstream",
+    "name":"ActualHoursCompleted",
     "srcType":"Workstream",
     "tsDecl":{
       "data":"issues",
-      "start":"resolution",
+      "start":"dateCompleted",
       "value":"hours",
       "treatment":"SUM",
       "overlapHandling": "SUM"
+    }
+  },
+  {
+    "id":"ExpectedHoursCompleted_Workstream",
+    "name":"ExpectedHoursCompleted",
+    "srcType":"Workstream",
+    "actionDecl": {
+      "action": "getExpectedHoursCompleted"
+    }
+  },
+  {
+    "id":"PointsCreated_Workstream",
+    "name":"PointsCreated",
+    "srcType":"Workstream",
+    "tsDecl":{
+      "data":"issues",
+      "start":"dateCreated",
+      "value":"storyPoints",
+      "treatment":"SUM",
+      "overlapHandling": "SUM"
+    }
+  },
+  {
+    "id":"ActualPointsCompleted_Workstream",
+    "name":"ActualPointsCompleted",
+    "srcType":"Workstream",
+    "tsDecl":{
+      "data":"issues",
+      "start":"dateCompleted",
+      "value":"storyPoints",
+      "treatment":"SUM",
+      "overlapHandling": "SUM"
+    }
+  },
+  {
+    "id":"ExpectedPointsCompleted_Workstream",
+    "name":"ExpectedPointsCompleted",
+    "srcType":"Workstream",
+    "actionDecl": {
+      "action": "getExpectedPointsCompleted"
+    }
+  },
+  {
+    "id":"CumulativeHoursCreated_Workstream",
+    "name":"CumulativeHoursCreated",
+    "srcType":"Workstream",
+    "actionDecl": {
+      "action": "getTotalHoursCreated"
+    }
+  },
+  {
+    "id":"CumulativeActualHoursCompleted_Workstream",
+    "name":"CumulativeActualHoursCompleted",
+    "srcType":"Workstream",
+    "actionDecl": {
+      "action": "getTotalHoursCompleted"
     }
   }
 ]

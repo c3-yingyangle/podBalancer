@@ -11,4 +11,4 @@
  */
 
 @typeScript
-type MergeWorkstreamEpic extends UiSdlEpic
+type MergeWorkstreamEpic mixes UiSdlEpic

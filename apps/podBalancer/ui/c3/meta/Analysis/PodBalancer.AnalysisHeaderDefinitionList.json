@@ -15,7 +15,10 @@
           "fieldName": "totalHoursRemaining",
           "label": "Total FTE Hours Completed"
         },
-        { "fieldName": "nextDeliverable", "label": "Next Workstream End" }
+        { 
+          "fieldName": "nextDeliverable",
+          "label": "Next Workstream End"
+        }
       ]
     }
   }

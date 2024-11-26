@@ -1,5 +1,0 @@
-/**
-* Search for a {@link Workstream}.
-*/
-@typeScript
-type WorkstreamSearchEpic extends UiSdlEpic

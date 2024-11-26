@@ -1,0 +1,101 @@
+{
+  "type": "UiSdlConnected<UiSdlFormDataGrid>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "header": {
+      "title": "Workstream Allocation"
+    },
+    "showSaveCancelButton": true,
+    "dataSpec": {
+      "type": "UiSdlFormDataGridDataSpec",
+      "actionName": "fetch",
+      "dataType": "PersonToWorkstreamAssignment",
+      "contextVars": {
+        "person.id": {
+          "type": "UiSdlComponentStateParam",
+          "id": "PodBalancer.CreateEngineerModalForm",
+          "path": "formFieldValues.person"
+        }
+      },
+      "columnFields": [
+        {
+          "type": "UiSdlFormDataGridDataSpecColumnFieldSetting",
+          "fieldName": "workstream.id",
+          "label": "Workstream",
+          "cellElement": {
+            "type": "UiSdlSelectInputFormDataGrid",
+            "dataSpec": {
+              "type": "UiSdlDropdownBaseDataSpec",
+              "dataType": "Workstream",
+              "actionName": "fetch",
+              "args": {
+                "spec": {
+                  "include": "id, name"
+                }
+              },
+              "dataPath": "objs"
+            },
+            "valueField": "id",
+            "displayField": "name",
+            "multiple": false
+          },
+          "editable": true
+        },
+        {
+          "type": "UiSdlFormDataGridDataSpecColumnFieldSetting",
+          "fieldName": "start",
+          "label": "Start Date",
+          "cellElement": {
+            "type": "UiSdlDateTimeInputFormDataGrid",
+            "triggersRegistered": false,
+            "wrapWithMetadataId": false,
+            "submittable": false
+          },
+          "editable": true
+        },
+        {
+          "type": "UiSdlFormDataGridDataSpecColumnFieldSetting",
+          "fieldName": "end",
+          "label": "End Date",
+          "cellElement": {
+            "type": "UiSdlDateTimeInputFormDataGrid",
+            "triggersRegistered": false,
+            "wrapWithMetadataId": false,
+            "submittable": false
+          },
+          "editable": true
+        },
+        {
+          "type": "UiSdlFormDataGridDataSpecColumnFieldSetting",
+          "fieldName": "pctAllocation",
+          "label": "% Allocation",
+          "cellElement": {
+            "type": "UiSdlNumberInputFormDataGrid",
+            "min": 0,
+            "max": 1,
+            "step": 0.01
+          },
+          "editable": true
+        },
+        {
+          "type": "UiSdlFormDataGridDataSpecColumnFieldSetting",
+          "fieldName": "person.id",
+          "editable": false,
+          "hidden": true
+        }
+      ]
+    }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.CreateEngineerModalAllocationDataGrid.ROW_ADDED",
+      "effectType": "SetFormDataGridPersonEpic",
+      "payload": {
+        "applicationStateId": "PodBalancer.PodBalancerApplicationState",
+        "formDataGridId": "PodBalancer.CreateEngineerModalAllocationDataGrid",
+        "fieldName": "person.id"
+      },
+      "payloadStrategy": "MERGE"
+    }
+  ]
+}

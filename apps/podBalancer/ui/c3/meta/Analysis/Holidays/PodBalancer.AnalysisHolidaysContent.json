@@ -1,0 +1,14 @@
+{
+  "type": "UiSdlConnected<UiSdlLayoutContainer>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "children": [
+      [
+        {
+          "id": "PodBalancer.AnalysisHolidaysDataGrid",
+          "width": 100
+        }
+      ]
+    ]
+  }
+}

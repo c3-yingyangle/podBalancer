@@ -1,0 +1,26 @@
+{
+  "type": "UiSdlConnected<UiSdlLayoutContainer>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "children": [
+      // [
+      //   {
+      //     "id": "PodBalancer.AnalysisStaffingStackedBarChart",
+      //     "width": 100
+      //   }
+      // ],
+      // [
+      //   {
+      //     "id": "PodBalancer.AnalysisStaffingDataGrid",
+      //     "width": 100
+      //   }
+      // ],
+      [
+        {
+          "id": "PodBalancer.AnalysisEngineersDataGrid",
+          "width": 100
+        }
+      ]
+    ]
+  }
+}

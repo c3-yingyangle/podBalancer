@@ -1,42 +1,86 @@
+/*
+ * Copyright 2009-2024 C3 AI (www.c3.ai). All Rights Reserved.
+ * This material, including without limitation any software, is the confidential trade secret and proprietary
+ * information of C3 and its licensors. Reproduction, use and/or distribution of this material in any form is
+ * strictly prohibited except as set forth in a written license agreement with C3 and/or its authorized distributors.
+ * This material may be covered by one or more patents or pending patent applications.
+ */
+
 /**
-* Issue.c3typ
-*
-* A JIRA issue.
-*/
+ * Issue.c3typ
+ * A JIRA ticket fetched for a specified {@link Workstream}. If multiple {@link Workstream}s
+ * include the same JIRA ticket number, separate {@link Issue}s will be created for the same ticket
+ * for each workstream. The {@link Issue#id} is `workstream.id + ticket.id`.
+ */
+
 entity type Issue mixes FeatureEvaluatable {
-  /** Convert from integration json to this type. */
+  /**
+   * Convert from integration JSON to this type.
+   */
   fromIntegrationJson: inline function(workstreamId: !string, o: !json): !Issue js
 
-  /** User/person associated with the ticket. */
+  /**
+   * The ticket number of this ticket.
+   */
+  ticketNumber: string
+
+  /**
+   * The ticket number of the parent ticket.
+   */
+  parentTicketNumber: string
+
+  /**
+   * The {@link Person} assigned to this ticket.
+   */
   person: Person
 
-  /** Project key, like "EW". */
+  /**
+   * Project key, e.g. "JROC".
+   */
   project: string
 
-  /** Start time of work on ticket. */
+  /**
+   * Start time of work on ticket.
+   */
   start: datetime
 
-  /** Amount of work in hours in the ticket. */
+  /**
+   * Amount of work in hours in the ticket.
+   */
   hours: double stored calc workstream.hoursPerStoryPoint * storyPoints
 
-  /** Amount of work in the ticket. */
+  /**
+   * Number of story points assigned to this ticket.
+   */
   storyPoints: double
 
-  /** The status of the ticket. */
+  /**
+   * The completion status of the ticket.
+   */
   status: string
 
-  /** The status category of the ticket. */
+  /**
+   * The status category of the ticket.
+   */
   statusCategory: string
 
-  /** Date/time of creation. */
-  creationDate: datetime
+  /**
+   * The datetime of when this ticket was created.
+   */
+  dateCreated: datetime
 
-  /** Date/time of resolution. */
-  resolution: datetime
+  /**
+   * The datetime of when this ticket was completed.
+   */
+  dateCompleted: datetime
 
-  /** Workstream of the ticket. */
+  /**
+   * The {@link Workstream} this ticket belongs to.
+   */
   workstream: Workstream
 
-  /** The raw issue from JIRA. */
+  /**
+   * The raw issue JSON data from JIRA.
+   */
   issue: json
 }

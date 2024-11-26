@@ -1,0 +1,79 @@
+{
+  "type": "UiSdlConnected<UiSdlFormDataGrid>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "header": {
+      "title": "PTO"
+    },
+    "showSaveCancelButton": true,
+    "dataSpec": {
+      "type": "UiSdlFormDataGridDataSpec",
+      "actionName": "fetch",
+      "disableDataRequestOnFirstRender": false,
+      "dataType": "PtoDay",
+      "contextVars": {
+        "person.id": {
+          "type": "UiSdlApplicationStateValueParam",
+          "id": "PodBalancer.PodBalancerApplicationState",
+          "path": "selectedPerson.id"
+        }
+      },
+      "columnFields": [
+        {
+          "type": "UiSdlFormDataGridDataSpecColumnFieldSetting",
+          "fieldName": "start",
+          "label": "Start Date",
+          "cellElement": {
+            "type": "UiSdlDateTimeInputFormDataGrid",
+            "triggersRegistered": false,
+            "wrapWithMetadataId": false,
+            "submittable": false
+          },
+          "editable": true
+        },
+        {
+          "type": "UiSdlFormDataGridDataSpecColumnFieldSetting",
+          "fieldName": "end",
+          "label": "End Date",
+          "cellElement": {
+            "type": "UiSdlDateTimeInputFormDataGrid",
+            "triggersRegistered": false,
+            "wrapWithMetadataId": false,
+            "submittable": false
+          },
+          "editable": true
+        },
+        {
+          "type": "UiSdlFormDataGridDataSpecColumnFieldSetting",
+          "fieldName": "pctOfDay",
+          "label": "% Of Day",
+          "cellElement": {
+            "type": "UiSdlNumberInputFormDataGrid",
+            "min": 0,
+            "max": 1,
+            "step": 0.01
+          },
+          "editable": true
+        },
+        {
+          "type": "UiSdlFormDataGridDataSpecColumnFieldSetting",
+          "fieldName": "person.id",
+          "editable": false,
+          "hidden": true
+        }
+      ]
+    }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.CreateEngineerModalPtoDataGrid.ROW_ADDED",
+      "effectType": "SetFormDataGridPersonEpic",
+      "payload": {
+        "applicationStateId": "PodBalancer.PodBalancerApplicationState",
+        "formDataGridId": "PodBalancer.CreateEngineerModalPtoDataGrid",
+        "fieldName": "person.id"
+      },
+      "payloadStrategy": "MERGE"
+    }
+  ]
+}

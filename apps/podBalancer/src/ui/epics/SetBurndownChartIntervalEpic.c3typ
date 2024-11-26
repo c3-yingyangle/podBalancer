@@ -12,4 +12,4 @@
  */
 
 @typeScript
-type SetBurndownChartIntervalEpic extends UiSdlEpic
+type SetBurndownChartIntervalEpic mixes UiSdlEpic

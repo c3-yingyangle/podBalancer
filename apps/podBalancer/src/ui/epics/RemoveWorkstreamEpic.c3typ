@@ -11,4 +11,4 @@
  */
 
 @typeScript
-type RemoveWorkstreamEpic extends UiSdlEpic
+type RemoveWorkstreamEpic mixes UiSdlEpic

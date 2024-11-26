@@ -1,16 +1,18 @@
 /**
-* JiraIntegration.Config.c3typ
-*
-* Configurations for integrating with JIRA.
-*/
+ * JiraIntegration.Config.c3typ
+ * Configurations for integrating with Jira.
+ */
+
 type JiraIntegration.Config mixes Config, Singleton {
-  /** Username for the user that is authenticating with JIRA. */
+  /**
+   * Username for the user that is authenticating with JIRA.
+   */
   username: string
 
-  /** API token for the user that is authenticating with JIRA.
-  *
-  * Manage these here: <https://id.atlassian.com/manage-profile/security/api-tokens>
-  */
+  /**
+   * API token for the user that is authenticating with JIRA.
+   * Manage these here: <https://id.atlassian.com/manage-profile/security/api-tokens>
+   */
   @config(secret=true)
   apiToken: string
 

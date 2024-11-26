@@ -1,6 +1,0 @@
-/**
-* EpicWorkstream.c3typ
-*
-* Workstream for an epic.
-*/
-entity type EpicWorkstream mixes Workstream type key "EPC"

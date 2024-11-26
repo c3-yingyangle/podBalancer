@@ -47,3 +47,28 @@ export function storeManageWorkstreamReducer(state, action) {
     action.payload.obj
   );
 }
+
+export function storeCurrentPersonAction(id, obj) {
+  return {
+    type: id + ".STORE_PERSON",
+    payload: {
+      applicationStateId: id,
+      obj: obj,
+    },
+  };
+}
+
+export function storeCurrenPersonReducer(state, action) {
+  var obj = action.payload.obj
+  if (action.payload.fieldValue && action.payload.fieldValue.length) {
+    obj = { id: action.payload.fieldValue }
+  }
+
+  // Save current Workstream in Application State
+  return setConfigInApplicationState(
+    action.payload.applicationStateId,
+    state,
+    ["selectedPerson"],
+    obj
+  );
+}

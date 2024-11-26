@@ -32,7 +32,7 @@ export function epic(
 
       // Get form field values
       let formFieldValues = getFormFieldValuesFromState(
-        "PodBalancer.AnalysisWorkstreamsManageModalForm",
+        "PodBalancer.ManageWorkstreamModalForm",
         state
       );
       let id = formFieldValues?.id || null;
@@ -73,13 +73,13 @@ export function epic(
                 // Renable button
                 of(
                   setDisabledAction(
-                    "PodBalancer.AnalysisWorkstreamsManageModalRefreshButton",
+                    "PodBalancer.ManageWorkstreamModalRefreshButton",
                     false
                   )
                 ),
                 of(
                   setLoadingAction(
-                    "PodBalancer.AnalysisWorkstreamsManageModalRefreshButton",
+                    "PodBalancer.ManageWorkstreamModalRefreshButton",
                     false
                   )
                 ),

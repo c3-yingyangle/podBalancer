@@ -1,0 +1,23 @@
+{
+  "type": "UiSdlConnected<UiSdlModal>",
+  "component": {
+    "size": "MEDIUM",
+    "header": {
+      "text": "Add Holiday"
+    },
+    "modalType": {
+      "type": "UiSdlTwoButtonModal",
+      "primaryButtonLabel": "Save",
+      "primaryButtonStyle": "primary",
+      "secondaryButtonLabel": "Cancel",
+      "secondaryButtonStyle": "secondary",
+      "closeModalOnPrimaryButtonClick": true,
+      "closeModalOnSecondaryButtonClick": true
+    },
+    "children": [
+      {
+        "id": "PodBalancer.CreateHolidayModalForm"
+      }
+    ]
+  }
+}

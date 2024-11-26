@@ -1,0 +1,26 @@
+[
+  {
+    "id": "JROC - Q1 Main Features",
+    "name": "JROC - Q1 Main Features",
+    "query": "parent IN (JROC-620, JROC-621, JROC-622, JROC-581) AND priority IN ('P0 - Blocker', 'P1 - Urgent with no workaround', 'P2 - Critical, but workaround exists')",
+    "hoursPerStoryPoint": 8,
+    "start": "2024-11-18",
+    "end": "2025-12-27"
+  },
+  {
+    "id": "JROC - Q1 Features",
+    "name": "JROC - Q1 Features",
+    "query": "parent in (JROC-620, JROC-621, JROC-622, JROC-581)",
+    "hoursPerStoryPoint": 8,
+    "start": "2024-11-18",
+    "end": "2025-12-27"
+  },
+  {
+    "id": "JROC - Q1 Testing",
+    "name": "JROC - Q1 Testing",
+    "query": "parent in (JROC-650)",
+    "hoursPerStoryPoint": 8,
+    "start": "2024-12-30",
+    "end": "2025-01-10"
+  }
+]

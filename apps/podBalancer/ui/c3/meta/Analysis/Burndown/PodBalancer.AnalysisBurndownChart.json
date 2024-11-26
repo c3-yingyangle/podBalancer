@@ -4,7 +4,7 @@
     "wrapWithMetadataId": true,
     "dataSpec": {
       "dataType": {
-        "typeName": "BurndownDynamicRenderHelper"
+        "typeName": "BurndownUiHelper"
       },
       "contextVars": {
         "timeHorizon": {

@@ -1,0 +1,15 @@
+{
+  "type": "UiSdlConnected<UiSdlModal>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "size": "MEDIUM",
+    "header": {
+      "text": "Manage Engineer Allocation"
+    },
+    "children": [
+      {
+        "id": "PodBalancer.CreateEngineerModalForm"
+      }
+    ]
+  }
+}

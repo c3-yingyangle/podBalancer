@@ -1,0 +1,71 @@
+{
+  "type": "UiSdlConnected<UiSdlDataGrid>",
+  "component": {
+    "header": {
+      "title": "Holidays"
+    },
+    "filterBar": true,
+    "defaultPageSize": 10,
+    "paginationConfig": {
+      "pageSize": 10,
+      "pageSizes": [10, 20, 30, 40],
+      "pagination": true
+    },
+    "removableRows": true,
+    "insertableRows": false,
+    "tableActions": [
+      {
+        "type": "UiSdlActionGroup",
+        "name": "Add New Holiday",
+        "iconSuffix": "plus",
+        "actionSuffix": "CREATE_HOLIDAY"
+      }
+    ],
+    "dataSpec": {
+      "dataType": "Holiday",
+      "filter": "date > '${selectedWorkstreamStart}' && date < '${selectedWorkstreamEnd}'",
+      "disableContextVarsFilter": true,
+      "contextVars": {
+        "selectedWorkstreamStart": {
+          "type": "UiSdlApplicationStateValueParam",
+          "id": "PodBalancer.PodBalancerApplicationState",
+          "path": "selectedWorkstream.start"
+        },
+        "selectedWorkstreamEnd": {
+          "type": "UiSdlApplicationStateValueParam",
+          "id": "PodBalancer.PodBalancerApplicationState",
+          "path": "selectedWorkstream.end"
+        }
+      },
+      "columnFields": [
+        {
+          "fieldName": "name",
+          "label": "Name",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "date",
+          "label": "Date",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "calendar.company.name",
+          "label": "Company",
+          "sortable": true,
+          "searchable": true
+        }
+      ]
+    }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisHolidaysDataGrid.TABLE_ACTION_CLICK_CREATE_HOLIDAY",
+      "effectType": "UiSdlEpicShowUiSdlModal",
+      "payload": {
+        "modal": "PodBalancer.CreateHolidayModal"
+      }
+    }
+  ]
+}

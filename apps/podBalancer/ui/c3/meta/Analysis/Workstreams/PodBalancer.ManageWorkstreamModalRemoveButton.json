@@ -1,0 +1,29 @@
+{
+  "type": "UiSdlConnected<UiSdlButton>",
+  "component": {
+    "usage": "danger",
+    "size": "large",
+    "content": "Delete Workstream"
+  },
+  "effectTriggers": [
+    {
+      "trigger": "BUTTON_CLICK",
+      "effectType": "RemoveWorkstreamEpic"
+    },
+    {
+      "trigger": "BUTTON_CLICK",
+      "actions": [
+        {
+          "type": "PodBalancer.ManageWorkstreamModalRemoveButton.LOADING_SET",
+          "payload": { "value": true },
+          "payloadStrategy": "MERGE"
+        },
+        {
+          "type": "PodBalancer.ManageWorkstreamModalRemoveButton.DISABLED_SET",
+          "payload": { "value": true },
+          "payloadStrategy": "MERGE"
+        }
+      ]
+    }
+  ]
+}

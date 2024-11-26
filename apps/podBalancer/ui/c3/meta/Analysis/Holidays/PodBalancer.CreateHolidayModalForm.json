@@ -1,0 +1,69 @@
+{
+  "type": "UiSdlConnected<UiSdlForm>",
+  "component": {
+    "hideFooterButtons": true,
+    "dataSpec": {
+      "fieldSets": {
+        "type": "[UiSdlFormFieldSet]",
+        "value": [
+          {
+            "type": "UiSdlFormFieldSet",
+            "fields": [
+              {
+                "fieldName": "name",
+                "label": "Holiday Name",
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "inputElement" : {
+                  "type" : "UiSdlTextInput",
+                  "fluid" : false
+                },
+                "required": true
+              },
+              {
+                "fieldName": "date",
+                "label": "Date",
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "inputElement" : {
+                  "type" : "UiSdlDateTimeInput"
+                },
+                "required": true
+              },
+              {
+                "fieldName": "company",
+                "label": "Company",
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "inputElement" : {
+                  "type" : "UiSdlSelectInput",
+                  "fluid" : false,
+                  "dataSpec": {
+                    "dataType": "Company",
+                    "actionName": "fetch",
+                    "args": {
+                      "spec": {
+                        "include": "id,name"
+                      }
+                    },
+                    "dataPath": "objs",
+                    "valueField": "id",
+                    "displayField": "name"
+                  }
+                },
+                "required": true
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "effectTriggers": [
+    // {
+    //   "trigger": "CooleyGenAi.CohortManagementCreateDraftModalForm.VALIDATE_AND_SUBMIT",
+    //   "effectType" : "CreateRiskFactorDraftEpic",
+    //   "payload" : {
+    //     "formId": "CooleyGenAi.CohortManagementCreateDraftModalForm"
+    //   },
+    //   "payloadStrategy": "MERGE"
+    // }
+  ]
+}

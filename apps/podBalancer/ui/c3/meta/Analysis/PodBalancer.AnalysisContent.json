@@ -1,66 +1,36 @@
 {
-  "type": "UiSdlConnected<UiSdlGridLayout>",
+  "type": "UiSdlConnected<UiSdlLayoutContainer>",
   "component": {
     "wrapWithMetadataId": true,
-    "detachedFields": [
-      { "id": "PodBalancer.AnalysisPersonAllocationModal" },
-      { "id": "PodBalancer.AnalysisWorkstreamsModal" },
-      { "id": "PodBalancer.AnalysisWorkstreamsManageModal" }
-    ],
-    "gridStyle": "FLUID",
-    "gutter": 8,
-    "display": "HORIZONTAL",
-    "header": {
-      "children": [
+    "children": [
+      [
         {
-          "type": "UiSdlGridContainer",
-          "children": [
-            {
-              "type": "UiSdlComponentContainer",
-              "column": 12,
-              "childComponent": {
-                "id": "PodBalancer.AnalysisHeaderContainer"
-              }
-            }
-          ]
+          "id": "PodBalancer.AnalysisWorkstreamsContainer",
+          "width": 20
+        },
+        {
+          "id": "PodBalancer.AnalysisTabPanel",
+          "width": 80
+        }
+      ],
+      [
+        {
+          "id": "PodBalancer.CreateWorkstreamModal",
+          "width": 100
+        },
+        {
+          "id": "PodBalancer.ManageWorkstreamModal",
+          "width": 100
+        },
+        {
+          "id": "PodBalancer.CreateEngineerModal",
+          "width": 100
+        },
+        {
+          "id": "PodBalancer.CreateHolidayModal",
+          "width": 100
         }
       ]
-    },
-    "children": [
-      {
-        "type": "UiSdlGridContainer",
-        "children": [
-          {
-            "type": "UiSdlComponentContainer",
-            "column": 12,
-            "childComponent": {
-              "id": "PodBalancer.AnalysisPersonAllocationDataGrid"
-            }
-          },
-          {
-            "type": "UiSdlGridContainer",
-            "column": 12,
-            "gridStyle": "FLUID",
-            "gutter": 8,
-            "display": "HORIZONTAL",
-            "children": [
-              {
-                "type": "UiSdlComponentContainer",
-                "column": 4,
-                "childComponent": {
-                  "id": "PodBalancer.AnalysisWorkstreamsContentFrame"
-                }
-              },
-              {
-                "type": "UiSdlComponentContainer",
-                "childComponent": {
-                  "id": "PodBalancer.AnalysisBurndownChartContainer"
-                }
-              }
-            ]
-          }
-        ]
-      }
     ]
   }
 }

@@ -1,0 +1,182 @@
+{
+  "type": "UiSdlConnected<UiSdlDataGrid>",
+  "component": {
+    "header": {
+      "title": "Burndown Per Week"
+    },
+    "filterBar": true,
+    "pagination": false,
+    "paginationConfig": {},
+    "removableColumns": true,
+    "resizableColumns": true,
+    "dataSpec": {
+      "dataType": "BurndownUiHelper",
+      "advancedDataSpec": {
+        "actionName": "getBurndownDataGrid",
+        "actionArgs": {
+          "workstream": { 
+            "id": "${selectedWorkstreamId}"
+          }
+        }
+      },
+      "disableContextVarsFilter": true,
+      "contextVars": {
+        "selectedWorkstreamId": {
+          "type": "UiSdlApplicationStateValueParam",
+          "id": "PodBalancer.PodBalancerApplicationState",
+          "path": "selectedWorkstream.id"
+        }
+      },
+      "columnFields": [
+        {
+          "fieldName": "id",
+          "label": "#",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "date",
+          "label": "Date",
+          "sortable": true,
+          "searchable": true,
+          "indicatorMappingField": "status",
+          "indicatorMapping": {
+            "Past": "#49BFA9", // green
+            "Current": "#4F8DFF", // blue
+            "Future":  "#A7ADC4" // gray
+          }
+        },
+        {
+          "fieldName": "numEngineers",
+          "label": "# Engineers",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "numPointsCompletedActual",
+          "label": "Pts Completed - Actual",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "numPointsCompletedExpected",
+          "label": "Pts Completed - Expected",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "numPointsRemainingActual",
+          "label": "Pts Remaining - Actual",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "numPointsRemainingExpected",
+          "label": "Pts Remaining - Expected",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "numPointsBehind",
+          "label": "Pts Behind",
+          "sortable": true,
+          "searchable": true,
+          "indicatorMappingField": "numPointsBehindStatus",
+          "indicatorMapping": {
+            "Red": "#F44C48", // red
+            "Blue": "#4F8DFF", // blue
+            "Green": "#49BFA9" // green
+          }
+        }
+        // {
+        //   "fieldName": "pctRemainingActual",
+        //   "label": "% Remaining - Actual",
+        //   "sortable": true,
+        //   "searchable": true
+        // },
+        // {
+        //   "fieldName": "pctRemainingExpected",
+        //   "label": "% Remaining - Expected",
+        //   "sortable": true,
+        //   "searchable": true
+        // },
+        // {
+        //   "fieldName": "changeInScope",
+        //   "label": "Change in Scope",
+        //   "sortable": true,
+        //   "searchable": true
+        // }
+      ]
+    }
+  }
+}
+
+// {
+//   "type":"UiSdlConnected<UiSdlTimeseriesLineBarChart>",
+//   "component":{
+//     "wrapWithMetadataId":true,
+//     "header":{
+//       "title":"Burndown"
+//     },
+//     "dataZoom":false,
+//     "yAxisDataZoom":false,
+//     "zoomEnabled":false,
+//     "dataSelection":false,
+//     "tooltipEnabled":true,
+//     "tooltipValuesDecimalPrecision":2,
+//     "noTimeZoneConversion":false,
+//     "backgroundStyle":"FULL_GRID",
+//     "xAxis":{
+//       "type":"UiSdlTimeseriesLineBarChartXAxisStaticConfig",
+//       "name":"Days",
+//       "interval":"DAY",
+//       "startDate":"2024-11-01",
+//       "endDate":"2025-02-01"
+//     },
+//     "yAxis":{
+//       "name":"Hours",
+//       "nameGap":20,
+//       "min":0
+//     },
+//     "legend":{
+//       "legendLayout":"HORIZONTAL",
+//       "legendPosition":"BELOW_CHART"
+//     },
+//     "showNowLine":true,
+//     // "dateLines":[
+//     //   {
+//     //     "type":"UiSdlTimeseriesLineBarChartDateLineConfig",
+//     //     "color":"ORANGE",
+//     //     "lineStyle":"dotted",
+//     //     "legendLabel":"Due Date",
+//     //     "lineWidth":"1",
+//     //     "date":"workstreamDueDate"
+//     //   }
+//     // ],
+//     "dataSpec":{
+//       "dataType":"Workstream",
+//       "yAxisFields":[
+//         {
+//           "legendLabel":"Actual Hours Completed",
+//           "metricName":"ActualHoursCompleted",
+//           "evaluateAction":"EVAL",
+//           "entityId":"JROC",
+//           "color":"#00ff00",
+//           "visualizationType":{
+//             "type":"UiSdlLineBarChartBarVisualization"
+//           }
+//         },
+//         {
+//           "legendLabel":"Expected Hours Completed",
+//           "metricName":"ExpectedHoursCompleted",
+//           "evaluateAction":"EVAL",
+//           "entityId":"JROC",
+//           "color":"#0000ff",
+//           "visualizationType":{
+//             "type":"UiSdlLineBarChartBarVisualization"
+//           }
+//         }
+//       ]
+//     }
+//   }
+// }

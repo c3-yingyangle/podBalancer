@@ -11,4 +11,4 @@
  */
 
 @typeScript
-type FilterWorkstreamCardListEpic extends UiSdlEpic
+type FilterWorkstreamCardListEpic mixes UiSdlEpic

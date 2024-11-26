@@ -1,7 +1,26 @@
+// {
+//   "type": "UiSdlConnected<UiSdlContainer>",
+//   "component": {
+//     "title": "Workstream Analysis",
+//     "children": [
+//       {
+//         "id": "PodBalancer.AnalysisHeaderDefinitionList"
+//         }
+//       ]
+//   }
+// }
+
 {
-  "type": "UiSdlConnected<UiSdlContainer>",
+  "type": "UiSdlConnected<UiSdlLayoutSidePanel>",
   "component": {
-    "title": "Workstream Analysis",
-    "children": [{ "id": "PodBalancer.AnalysisHeaderDefinitionList" }]
+    "wrapWithMetadataId": true,
+    "children": [
+      [
+        {
+          "id": "PodBalancer.AnalysisHeaderDefinitionList",
+          "width": 100
+        }
+      ]
+    ]
   }
 }

@@ -19,7 +19,7 @@
           "spec": {
             "filter": "end > now()",
             "order": "ascending(end)",
-            "include": "this, humanDateRange, hoursRemainingMinusAllocation",
+            "include": "this, humanDateRange, pointsRemainingMinusAllocation",
             "limit": -1
           }
         }
@@ -31,7 +31,7 @@
         "fieldName": "humanDateRange"
       },
       "numericalIndicator": {
-        "fieldName": "hoursRemainingMinusAllocation",
+        "fieldName": "pointsRemainingMinusAllocation",
         "minimum": 0,
         "maximum": 10,
         "gradient": "gradient1"
@@ -52,13 +52,8 @@
       "effectType": "ManageWorkstreamEpic",
       "payload": {
         "applicationStateId": "PodBalancer.PodBalancerApplicationState",
-        "modalId": "PodBalancer.AnalysisWorkstreamsManageModal"
+        "modalId": "PodBalancer.ManageWorkstreamModal"
       },
-      "payloadStrategy": "MERGE"
-    },
-    {
-      "trigger": "PodBalancer.AnalysisWorkstreamsCardList.CARD_ACTION_CLICK_REMOVE_WORKSTREAM",
-      "effectType": "RemoveWorkstreamEpic",
       "payloadStrategy": "MERGE"
     }
   ]

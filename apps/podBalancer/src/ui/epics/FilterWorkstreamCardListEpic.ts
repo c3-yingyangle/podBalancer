@@ -19,7 +19,7 @@ export function epic(actionStream: UiSdlActionsObservable, stateStream: UiSdlSta
     mergeMap(function (action) {
       // Get filter button value
       let workstreamType = action?.payload?.value?.[0];
-      let filter = workstreamType == 'PAST' ? new Filter().lt('end', new DateTime()).toString() : new Filter().gt('end', new DateTime()).toString()
+      let filter = workstreamType == 'PAST' ? new Filter().lt('end', new DateTime()).toString() : new Filter().not().lt('end', new DateTime()).toString()
 
       let observables = [
         // Reload Workstreams card list

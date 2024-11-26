@@ -1,0 +1,56 @@
+{
+  "type": "UiSdlConnected<UiSdlForm>",
+  "component": {
+    "hideFooterButtons": true,
+    "dataSpec": {
+      "fieldSets": {
+        "type": "[UiSdlFormFieldSet]",
+        "value": [
+          {
+            "type": "UiSdlFormFieldSet",
+            "fields": [
+              {
+                "fieldName": "person",
+                "label": "Select Engineer",
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "inputElement" : {
+                  "type" : "UiSdlSelectInput",
+                  "fluid" : false,
+                  "dataSpec": {
+                    "dataType": "Person",
+                    "actionName": "fetch",
+                    "args": {
+                      "spec": {
+                        "include": "id,name"
+                      }
+                    },
+                    "dataPath": "objs",
+                    "valueField": "id",
+                    "displayField": "name"
+                  }
+                },
+                "required": false
+              },
+              {
+                "fieldName": "pto",
+                "label": "PTO",
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "componentRef": {
+                  "id": "PodBalancer.CreateEngineerModalPtoDataGrid"
+                }
+              },
+              {
+                "fieldName": "allocation",
+                "label": "Workstream Allocation",
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "componentRef": {
+                  "id": "PodBalancer.CreateEngineerModalAllocationDataGrid"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

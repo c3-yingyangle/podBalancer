@@ -118,6 +118,7 @@ def __get_issues(
         status_category = __drill(issue, ["fields", "status", "statusCategory", "name"])
         priority = __drill(issue, ["fields", "priority", "name"])
         priority_id = __drill(issue, ["fields", "priority", "id"])
+        parent_key = __drill(issue, ["fields", "parent", "key"], "")
         parent_summary = __drill(issue, ["fields", "parent", "fields", "summary"], "")
         story_points = __drill(issue, ["fields", "customfield_13127"], 0.0)
         assignee = __drill(issue, ["fields", "assignee", "displayName"], "")
@@ -140,7 +141,8 @@ def __get_issues(
                 "Status": status,
                 "Status Category": status_category,
                 "Priority": priority,
-                "Parent summary": parent_summary,
+                "Parent Key": parent_key,
+                "Parent Summary": parent_summary,
                 "Custom field (Story point estimate)": story_points,
                 "Assignee": assignee,
                 "Assignee Email": assignee_email,

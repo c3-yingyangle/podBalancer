@@ -1,0 +1,114 @@
+{
+  "type": "UiSdlConnected<UiSdlDataGrid>",
+  "applicationStateRef": {
+    "id": "PodBalancer.PodBalancerApplicationState"
+  },
+  "component": {
+    "header": {
+      "title": "Engineers"
+    },
+    "filterBar": true,
+    "defaultPageSize": 10,
+    "paginationConfig": {
+      "pageSize": 10,
+      "pageSizes": [10, 20, 30, 40],
+      "pagination": true
+    },
+    "tableActions": [
+      {
+        "type": "UiSdlActionGroup",
+        "name": "Add New Engineer",
+        "iconSuffix": "plus",
+        "actionSuffix": "CREATE_PERSON"
+      }
+    ],
+    "rowActions": [
+      {
+        "name": "Edit Allocation",
+        "iconSuffix": "edit",
+        "actionSuffix": "EDIT_PERSON"
+      }
+    ],
+    "dataSpec": {
+      "dataType": "Person",
+      "contextVars": {
+        "assignments.workstream.id": {
+          "type": "UiSdlApplicationStateValueParam",
+          "id": "PodBalancer.PodBalancerApplicationState",
+          "path": "selectedWorkstream.id"
+        }
+      },
+      "columnFields": [
+        {
+          "fieldName": "name",
+          "label": "Name",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "email",
+          "label": "Email",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "company.name",
+          "label": "Company",
+          "sortable": true,
+          "searchable": true
+        }
+      ]
+    }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisEngineersDataGrid.TABLE_ACTION_CLICK_CREATE_PERSON",
+      "actions": [
+        {
+          "type": "PodBalancer.PodBalancerApplicationState.STORE_PERSON",
+          "payload": {
+            "applicationStateId": "PodBalancer.PodBalancerApplicationState",
+            "obj": null
+          },
+          "payloadStrategy": "MERGE"
+        }
+      ]
+    },
+    {
+      "trigger": "PodBalancer.AnalysisEngineersDataGrid.TABLE_ACTION_CLICK_CREATE_PERSON",
+      "effectType": "UiSdlEpicShowUiSdlModal",
+      "payload": {
+        "modal": "PodBalancer.CreateEngineerModal"
+      }
+    },
+    {
+      "trigger": "PodBalancer.AnalysisEngineersDataGrid.ROW_ACTION_CLICK_EDIT_PERSON",
+      "actions": [
+        {
+          "type": "PodBalancer.PodBalancerApplicationState.STORE_PERSON",
+          "payload": {
+            "applicationStateId": "PodBalancer.PodBalancerApplicationState"
+          },
+          "payloadStrategy": "MERGE"
+        }
+      ]
+    },
+    {
+      "trigger": "PodBalancer.AnalysisEngineersDataGrid.ROW_ACTION_CLICK_EDIT_PERSON",
+      "effectType": "UiSdlEpicShowUiSdlModal",
+      "payload": {
+        "modal": "PodBalancer.CreateEngineerModal"
+      }
+    },
+    {
+      "trigger": "PodBalancer.CreateEngineerModalForm.LOADED_DATA_HANDLE",
+      "effectType": "SelectPersonDropdownEpic",
+      "payload": {
+        "formId": "PodBalancer.CreateEngineerModalForm",
+        "fieldName": "person",
+        "applicationStateId": "PodBalancer.PodBalancerApplicationState",
+        "applicationStateField": "selectedPerson"
+      }
+    }
+  ]
+}

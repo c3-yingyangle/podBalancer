@@ -11,4 +11,4 @@
  */
 
 @typeScript
-type RefreshWorkstreamIssuesEpic extends UiSdlEpic
+type RefreshWorkstreamIssuesEpic mixes UiSdlEpic

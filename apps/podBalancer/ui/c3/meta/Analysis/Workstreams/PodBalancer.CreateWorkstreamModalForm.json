@@ -1,0 +1,66 @@
+{
+  "type": "UiSdlConnected<UiSdlForm>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "hideFooterButtons": true,
+    "dataSpec": {
+      "dataType": "Workstream",
+      "fieldSets": {
+        "type": "[UiSdlFormFieldSet]",
+        "value": [
+          {
+            "type": "UiSdlFormFieldSet",
+            "collapsible": false,
+            "fields": [
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "name",
+                "label": "Workstream Name",
+                "inputElement": {
+                  "type": "UiSdlTextInput",
+                  "placeholder": "",
+                  "fluid": true
+                }
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "query",
+                "label": "JQL Query",
+                "inputElement": {
+                  "type": "UiSdlTextInput",
+                  "placeholder": "",
+                  "fluid": true
+                }
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "hoursPerStoryPoint",
+                "label": "Hours Per Story Point",
+                "inputElement": {
+                  "type": "UiSdlNumberInput",
+                  "placeholder": "",
+                  "fluid": true
+                }
+              },
+              {
+                "type": "UiSdlFieldSetFormFieldSetting",
+                "fieldName": "dateRange",
+                "label": "Date Range",
+                "inputElement": {
+                  "type": "UiSdlDateTimeRangeInput",
+                  "fluid": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.ManageWorkstreamModal.PRIMARY_BUTTON_CLICK",
+      "effectType": "CreateUpdateWorkstreamEpic"
+    }
+  ]
+}

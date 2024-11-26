@@ -11,4 +11,4 @@
  */
 
 @typeScript
-type ManageWorkstreamEpic extends UiSdlEpic
+type ManageWorkstreamEpic mixes UiSdlEpic

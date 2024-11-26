@@ -1,0 +1,21 @@
+{
+  "type": "UiSdlConnected<UiSdlTabPanel>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "disableDataRequestOnFirstRender": false,
+    "tabComponents": [
+      {
+        "id": "PodBalancer.AnalysisBurndownContent",
+        "title": "Burndown"
+      },
+      {
+        "id": "PodBalancer.AnalysisEngineersContent",
+        "title": "Engineers"
+      },
+      {
+        "id": "PodBalancer.AnalysisHolidaysContent",
+        "title": "Holidays"
+      }
+    ]
+  }
+}
