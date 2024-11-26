@@ -16,3 +16,18 @@
 .c3-k-header-content-wrapper span {
   display: inline-table;
 }
+
+// Add spacing between components in Analysis section
+.c3-metadata-id-podbalancer-analysistabpanel .c3-sdl-layout-container-row {
+  margin: 10px 0;
+}
+
+// Remove white scroll bar on the right of the Burndown data grid
+.c3-metadata-id-podbalancer-analysisburndowndatagrid .k-grid-content {
+  display: contents !important;
+}
+
+// Show cursor as pointer when hovering over segmented button group
+.c3-sdl-segmented-button-group.outlined:hover {
+  cursor: pointer;
+}

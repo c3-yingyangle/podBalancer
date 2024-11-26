@@ -22,7 +22,8 @@ export function epic(actionStream: UiSdlActionsObservable, stateStream: UiSdlSta
       let selectedWorkstream = action?.payload?.cardData;
 
       // Get the current interval selected
-      let interval = getConfigFromState('PodBalancer.AnalysisBurndownChartIntervalButton', state, ['value'])?.toJS()?.[0];
+      // TODO: don't hardcode interval
+      let interval = 'DAY'
 
       let observables = [
         // Store the selected Workstream in app state

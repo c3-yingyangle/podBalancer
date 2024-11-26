@@ -39,7 +39,7 @@ function generateChart(workstream, interval) {
     component: {
       wrapWithMetadataId: true,
       header: {
-        title: "Burndown Chart - " + workstream.name,
+        title: "Burndown Chart",
       },
       dataZoom: false,
       yAxisDataZoom: false,

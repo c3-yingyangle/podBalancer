@@ -1,5 +1,14 @@
 {
   "type": "UiSdlConnected<UiSdlTabPanel>",
+  "derivedProps": {
+    "title": {
+      "text": {
+        "type": "UiSdlApplicationStateValueParam",
+        "id": "PodBalancer.PodBalancerApplicationState",
+        "path": "selectedWorkstream.name"
+      }
+    }
+  },
   "component": {
     "wrapWithMetadataId": true,
     "disableDataRequestOnFirstRender": false,

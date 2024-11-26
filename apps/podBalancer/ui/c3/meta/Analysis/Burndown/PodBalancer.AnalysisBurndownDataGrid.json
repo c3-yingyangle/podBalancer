@@ -1,12 +1,14 @@
 {
   "type": "UiSdlConnected<UiSdlDataGrid>",
   "component": {
+    "wrapWithMetadataId": true,
     "header": {
       "title": "Burndown Per Week"
     },
-    "filterBar": true,
-    "pagination": false,
-    "paginationConfig": {},
+    "filterBar": false,
+    "paginationConfig": {
+      "pagination": false
+    },
     "removableColumns": true,
     "resizableColumns": true,
     "dataSpec": {

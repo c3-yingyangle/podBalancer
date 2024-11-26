@@ -2,6 +2,9 @@
   "type": "UiSdlConnected<UiSdlCardList>",
   "component": {
     "wrapWithMetadataId": true,
+    "emptyState": {
+      "id": "PodBalancer.EmptyState"
+    },
     "orientation": "VERTICAL",
     "primaryActionButton": {
       "name": "Analyze",

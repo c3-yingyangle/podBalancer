@@ -29,14 +29,14 @@
                 "required": true
               },
               {
-                "fieldName": "company",
-                "label": "Company",
+                "fieldName": "holidayCalendar",
+                "label": "Holiday Calendar",
                 "type": "UiSdlFieldSetFormFieldSetting",
                 "inputElement" : {
                   "type" : "UiSdlSelectInput",
                   "fluid" : false,
                   "dataSpec": {
-                    "dataType": "Company",
+                    "dataType": "HolidayCalendar",
                     "actionName": "fetch",
                     "args": {
                       "spec": {
@@ -55,15 +55,5 @@
         ]
       }
     }
-  },
-  "effectTriggers": [
-    // {
-    //   "trigger": "CooleyGenAi.CohortManagementCreateDraftModalForm.VALIDATE_AND_SUBMIT",
-    //   "effectType" : "CreateRiskFactorDraftEpic",
-    //   "payload" : {
-    //     "formId": "CooleyGenAi.CohortManagementCreateDraftModalForm"
-    //   },
-    //   "payloadStrategy": "MERGE"
-    // }
-  ]
+  }
 }
