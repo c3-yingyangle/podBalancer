@@ -2,11 +2,18 @@
   "type": "UiSdlConnected<UiSdlLayoutContainer>",
   "component": {
     "wrapWithMetadataId": true,
+    "title": {
+      "title": "Workstreams"
+    },
     "children": [
       [
         {
-          "id": "PodBalancer.AnalysisWorkstreamsContentBar",
-          "width": 100
+          "id": "PodBalancer.AnalysisWorkstreamsFilterButton",
+          "width": 85
+        },
+        {
+          "id": "PodBalancer.AnalysisWorkstreamsAddButton",
+          "width": 15
         }
       ],
       [

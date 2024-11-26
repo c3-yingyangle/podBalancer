@@ -1,7 +1,47 @@
-// Hide card title on Workstreams card list
-.c3-metadata-id-podbalancer-analysisworkstreamscardlist {
-  .c3-card-title {
-    display: none;
+// Workstreams container
+.c3-metadata-id-podbalancer-analysisworkstreamscontainer {
+  background-color: rgb(28, 29, 31);
+  padding: 10px;
+
+  .c3-sdl-layout-container-row {
+    margin: 10px 0;
+  }
+
+  .c3-sdl-layout-container-content {
+    padding: 0;
+  }
+
+  .c3-sdl-layout-container-header.c3-card-title {
+    padding: 0 6px;
+    padding-bottom: 14px;
+  }
+
+  .c3-sdl-layout-container-row:nth-child(1) {
+    margin: 0;
+  }
+
+  .c3-sdl-layout-container-row:nth-child(2) {
+    margin-top: 0;
+  }
+
+  // Workstreams card list
+  .c3-metadata-id-podbalancer-analysisworkstreamscardlist {
+    // Hide card title on Workstreams card list
+    .c3-card-title {
+      display: none;
+    }
+
+    .c3-sdl-card-container {
+      padding: 0;
+    }
+
+    > .c3-sdl-card-list {
+      margin: 0;
+
+      .c3-sdl-card {
+        margin: 6px 0;
+      }
+    }
   }
 }
 
@@ -17,9 +57,16 @@
   display: inline-table;
 }
 
-// Add spacing between components in Analysis section
-.c3-metadata-id-podbalancer-analysistabpanel .c3-sdl-layout-container-row {
-  margin: 10px 0;
+.c3-metadata-id-podbalancer-analysistabpanel {
+  // Remove extra margin on left and right of tab panel content
+  .c3-sdl-tabpanel-tab-pane {
+    margin: 10px 0;
+  }
+
+  // Add spacing between components in Analysis section
+  .c3-sdl-layout-container-row {
+    margin: 10px 0;
+  }
 }
 
 // Remove white scroll bar on the right of the Burndown data grid
