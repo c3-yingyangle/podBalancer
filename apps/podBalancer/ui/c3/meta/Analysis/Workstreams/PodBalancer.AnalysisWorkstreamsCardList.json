@@ -17,8 +17,8 @@
         "actionName": "fetch",
         "actionArgs": {
           "spec": {
-            "filter": "end > now()",
-            "order": "ascending(end)",
+            "filter": "end > now() || !exists(end)",
+            "order": "ascending(end), ascending(start)",
             "include": "this, humanDateRange, pointsRemainingMinusAllocation",
             "limit": -1
           }
