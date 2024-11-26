@@ -8,17 +8,23 @@
 
 /**
  * HolidayCalendar.c3typ
- * A specific holiday calendar for a company (example: US Holidays at C3 AI)
+ * A specific holiday calendar for a {@link Company}, typically differs by region.
+ * Example: US Holidays at C3 AI.
  */
 
 entity type HolidayCalendar {
   /**
-   * The associated {@link Company}
+   * The {@link Company} associated with this holiday calendar.
    */
   company: Company
 
   /**
-   * The associated {@link Holiday}
+   * The {@link Holiday}s in this holiday calendar.
    */
   holidays: [Holiday](calendar)
+
+  /**
+   * The {@link Peron}s to whom this holiday calendar applies.
+   */
+  persons: [Person](holidayCalendar)
 }

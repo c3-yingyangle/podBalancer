@@ -99,7 +99,7 @@ function getPersonAllocationHours(person, workstream, start, end) {
 
   // Set hours to 0 on holidays
   var holidays = Holiday.fetch({
-    filter: Filter.eq('calendar.company.id', person.company.id),
+    filter: Filter.eq('calendar.id', person.holidayCalendar.id),
     limit: -1,
   }).objs;
   for (var i = 0; i < holidays.length; i++) {

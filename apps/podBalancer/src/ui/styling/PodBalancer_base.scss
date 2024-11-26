@@ -1,15 +1,18 @@
+// Hide card title on Workstreams card list
 .c3-metadata-id-podbalancer-analysisworkstreamscardlist {
   .c3-card-title {
     display: none;
   }
 }
 
+// Remove border on Manage Workstream modal form
 .c3-metadata-id-podbalancer-manageworkstreammodalform {
   .c3-sdl-form {
     border: 0 !important;
   }
 }
 
+// Wrap data grid column titles
 .c3-k-header-content-wrapper span {
   display: inline-table;
 }

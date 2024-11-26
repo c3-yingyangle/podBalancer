@@ -23,25 +23,29 @@ entity type Person {
   email: string
 
   /**
-   * Tickets assigned to this person.
+   * The {@link Company} that this person works for.
+   */
+  company: Company
+
+  /**
+   * The tickets assigned to this person.
    */
   tickets: [Issue](person)
 
   /**
-   * Relation type between {@link Person} and {@link Workstream} with the extra detail of specifying the
-   * allocation of their assignment on that workstream
+   * This person's allocation to various {@link Workstream}s.
    */
   assignments: [PersonToWorkstreamAssignment](person)
 
   /**
-   * Time overrides for a person whether that is PTO, sick days, working weekends, or working into evenings.
+   * The {@link PtoDay}s for this person.
    */
-  timeOverrides: [PtoDay](person)
+  ptoDays: [PtoDay](person)
 
   /**
-   * The company that the person works for.
+   * The {@link HolidayCalendar} that this person uses.
    */
-  company: Company
+  holidayCalendar: HolidayCalendar
 
   /**
    * Convert from ticket integration json to this type.

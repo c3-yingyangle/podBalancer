@@ -8,7 +8,7 @@
 
 /**
  * Company.c3typ
- * Type to represent a company that a {@link Person} works
+ * Type to represent a company that a {@link Person} works at.
  */
 
 entity type Company {

@@ -14,12 +14,15 @@ type BurndownUiHelper mixes FeatureEvaluatable {
   /**
    * Helper function to return a dynamic chart for the burndown line chart.
    */
-  getChartConfig: function(workstreamId: string, interval: string): json js-server
+  getBurndownChartConfig: function(workstreamId: string, interval: string): json js-server
 
   /**
    * Helper function to return the data for the burndown line chart.
    */
   evalMetrics: function(spec: json): EvalMetricsResult js-rhino
 
+  /**
+   * Helper function to return the data for the burndown data grid.
+   */
   getBurndownDataGrid: function(workstream: Workstream): json js-rhino
 }

@@ -14,7 +14,7 @@
         }
       },
       "advancedDataSpec": {
-        "actionName": "getChartConfig",
+        "actionName": "getBurndownChartConfig",
         "args": {
           "workstreamId": "${workstreamId}"
         }

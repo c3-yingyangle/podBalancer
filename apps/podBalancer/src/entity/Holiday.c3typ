@@ -8,7 +8,7 @@
 
 /**
  * Holiday.c3typ
- * A day of time that a company provides as holiday to its employees
+ * A date that a {@link Company} provides as a day off to all its {@link Person} employees.
  */
 
 entity type Holiday {

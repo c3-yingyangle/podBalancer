@@ -1,6 +1,6 @@
 const round = (num) => Math.round(num * 100) / 100
 
-function getChartConfig(workstreamId, interval) {
+function getBurndownChartConfig(workstreamId, interval) {
   if (!interval) interval = "DAY";
 
   if (workstreamId) {
