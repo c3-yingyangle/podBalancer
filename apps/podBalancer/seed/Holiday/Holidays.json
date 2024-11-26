@@ -136,14 +136,6 @@
         }
     },
     {
-        "id": "2024-11-29_Paradyme_US",
-        "name": "US Day After Thanksgiving, 2024",
-        "date": "2024-11-29",
-        "calendar": {
-            "id": "Paradyme US"
-        }
-    },
-    {
         "id": "2024-12-24_Paradyme_US",
         "name": "US Christmas Eve, 2024",
         "date": "2024-12-24",
