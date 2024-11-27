@@ -12,6 +12,7 @@
   "component": {
     "wrapWithMetadataId": true,
     "disableDataRequestOnFirstRender": false,
+    "primaryActionButtonTitle": "View on Jira",
     "tabComponents": [
       {
         "id": "PodBalancer.AnalysisBurndownContent",
@@ -26,5 +27,12 @@
         "title": "Holidays"
       }
     ]
-  }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisTabPanel.ACTION_CLICK_PRIMARY",
+      "effectType": "OpenJiraIssuesEpic",
+      "payloadStrategy": "MERGE"
+    }
+  ]
 }
