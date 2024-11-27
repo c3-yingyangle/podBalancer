@@ -24,7 +24,8 @@
                 "label": "Date",
                 "type": "UiSdlFieldSetFormFieldSetting",
                 "inputElement" : {
-                  "type" : "UiSdlDateTimeInput"
+                  "type" : "UiSdlDateTimeInput",
+                  "showTimePicker": false
                 },
                 "required": true
               },

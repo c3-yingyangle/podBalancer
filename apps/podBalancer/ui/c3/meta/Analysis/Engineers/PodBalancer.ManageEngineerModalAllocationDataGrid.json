@@ -47,6 +47,7 @@
           "label": "Start Date",
           "cellElement": {
             "type": "UiSdlDateTimeInputFormDataGrid",
+            "showTimePicker": false,
             "triggersRegistered": false,
             "wrapWithMetadataId": false,
             "submittable": false
@@ -59,6 +60,7 @@
           "label": "End Date",
           "cellElement": {
             "type": "UiSdlDateTimeInputFormDataGrid",
+            "showTimePicker": false,
             "triggersRegistered": false,
             "wrapWithMetadataId": false,
             "submittable": false
