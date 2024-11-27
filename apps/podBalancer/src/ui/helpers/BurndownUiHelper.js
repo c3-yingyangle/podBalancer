@@ -29,12 +29,12 @@ function generateEmptyState() {
 function generateChart(workstream, interval) {
   var chartStartDate = workstream.start;
   // TODO: set end date to the last datetime in all our timeseries
-  var chartEndDate = workstream.end.plusDays(120);
+  var chartEndDate = workstream.end.plusDays(30);
 
   var workstreamDueDate = workstream.end;
 
   var chartConfig = {
-    id: "PodBalancer.AnalysisBurndownChart_" + DateTime.now().millis,
+    id: "PodBalancer.AnalysisBurndownChart_" + workstream.id + '_' + DateTime.now().millis,
     type: "UiSdlConnected<UiSdlTimeseriesLineBarChart>",
     component: {
       wrapWithMetadataId: true,
