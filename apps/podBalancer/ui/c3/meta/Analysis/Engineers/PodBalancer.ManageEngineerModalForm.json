@@ -36,7 +36,7 @@
                 "label": "PTO",
                 "type": "UiSdlFieldSetFormFieldSetting",
                 "componentRef": {
-                  "id": "PodBalancer.CreateEngineerModalPtoDataGrid"
+                  "id": "PodBalancer.ManageEngineerModalPtoDataGrid"
                 }
               },
               {
@@ -44,7 +44,7 @@
                 "label": "Workstream Allocation",
                 "type": "UiSdlFieldSetFormFieldSetting",
                 "componentRef": {
-                  "id": "PodBalancer.CreateEngineerModalAllocationDataGrid"
+                  "id": "PodBalancer.ManageEngineerModalAllocationDataGrid"
                 }
               }
             ]
@@ -55,7 +55,7 @@
   },
   "effectTriggers": [
     {
-      "trigger": "PodBalancer.CreateEngineerModalForm.INPUT_CHANGE",
+      "trigger": "PodBalancer.ManageEngineerModalForm.INPUT_CHANGE",
       "actions": [
         {
           "type": "PodBalancer.PodBalancerApplicationState.STORE_PERSON",

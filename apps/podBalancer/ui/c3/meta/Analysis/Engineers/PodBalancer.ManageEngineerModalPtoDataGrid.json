@@ -66,11 +66,11 @@
   },
   "effectTriggers": [
     {
-      "trigger": "PodBalancer.CreateEngineerModalPtoDataGrid.ROW_ADDED",
+      "trigger": "PodBalancer.ManageEngineerModalPtoDataGrid.ROW_ADDED",
       "effectType": "SetFormDataGridPersonEpic",
       "payload": {
         "applicationStateId": "PodBalancer.PodBalancerApplicationState",
-        "formDataGridId": "PodBalancer.CreateEngineerModalPtoDataGrid",
+        "formDataGridId": "PodBalancer.ManageEngineerModalPtoDataGrid",
         "fieldName": "person.id"
       },
       "payloadStrategy": "MERGE"

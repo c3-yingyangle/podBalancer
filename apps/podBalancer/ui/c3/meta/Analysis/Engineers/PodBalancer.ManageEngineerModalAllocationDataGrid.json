@@ -13,7 +13,7 @@
       "contextVars": {
         "person.id": {
           "type": "UiSdlComponentStateParam",
-          "id": "PodBalancer.CreateEngineerModalForm",
+          "id": "PodBalancer.ManageEngineerModalForm",
           "path": "formFieldValues.person"
         }
       },
@@ -88,11 +88,11 @@
   },
   "effectTriggers": [
     {
-      "trigger": "PodBalancer.CreateEngineerModalAllocationDataGrid.ROW_ADDED",
+      "trigger": "PodBalancer.ManageEngineerModalAllocationDataGrid.ROW_ADDED",
       "effectType": "SetFormDataGridPersonEpic",
       "payload": {
         "applicationStateId": "PodBalancer.PodBalancerApplicationState",
-        "formDataGridId": "PodBalancer.CreateEngineerModalAllocationDataGrid",
+        "formDataGridId": "PodBalancer.ManageEngineerModalAllocationDataGrid",
         "fieldName": "person.id"
       },
       "payloadStrategy": "MERGE"

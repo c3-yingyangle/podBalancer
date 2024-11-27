@@ -78,7 +78,7 @@
       "trigger": "PodBalancer.AnalysisEngineersDataGrid.TABLE_ACTION_CLICK_CREATE_PERSON",
       "effectType": "UiSdlEpicShowUiSdlModal",
       "payload": {
-        "modal": "PodBalancer.CreateEngineerModal"
+        "modal": "PodBalancer.ManageEngineerModal"
       }
     },
     {
@@ -97,14 +97,14 @@
       "trigger": "PodBalancer.AnalysisEngineersDataGrid.ROW_ACTION_CLICK_EDIT_PERSON",
       "effectType": "UiSdlEpicShowUiSdlModal",
       "payload": {
-        "modal": "PodBalancer.CreateEngineerModal"
+        "modal": "PodBalancer.ManageEngineerModal"
       }
     },
     {
-      "trigger": "PodBalancer.CreateEngineerModalForm.LOADED_DATA_HANDLE",
+      "trigger": "PodBalancer.ManageEngineerModalForm.LOADED_DATA_HANDLE",
       "effectType": "SelectPersonDropdownEpic",
       "payload": {
-        "formId": "PodBalancer.CreateEngineerModalForm",
+        "formId": "PodBalancer.ManageEngineerModalForm",
         "fieldName": "person",
         "applicationStateId": "PodBalancer.PodBalancerApplicationState",
         "applicationStateField": "selectedPerson"
