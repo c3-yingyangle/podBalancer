@@ -32,13 +32,13 @@
       },
       "subHeader": {
         "fieldName": "humanDateRange"
-      },
-      "numericalIndicator": {
-        "fieldName": "pointsRemainingMinusAllocation",
-        "minimum": 0,
-        "maximum": 10,
-        "gradient": "gradient1"
       }
+      // "numericalIndicator": {
+      //   "fieldName": "pointsRemainingMinusAllocation",
+      //   "minimum": 0,
+      //   "maximum": 10,
+      //   "gradient": "gradient1"
+      // }
     }
   },
   "effectTriggers": [
