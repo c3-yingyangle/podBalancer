@@ -52,5 +52,19 @@
         ]
       }
     }
-  }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.CreateEngineerModalForm.INPUT_CHANGE",
+      "actions": [
+        {
+          "type": "PodBalancer.PodBalancerApplicationState.STORE_PERSON",
+          "payload": {
+            "applicationStateId": "PodBalancer.PodBalancerApplicationState"
+          },
+          "payloadStrategy": "MERGE"
+        }
+      ]
+    }
+  ]
 }

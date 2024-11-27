@@ -15,12 +15,12 @@ entity type PersonToWorkstreamAssignment {
   /**
    * Link to associated {@link Person}
    */
-  person: Person
+  person: !Person
 
   /**
    * Link to associated {@link Workstream}
    */
-  workstream: Workstream
+  workstream: !Workstream
 
   /**
    * Start date of allocation for {@link Person} to {@link Workstream}

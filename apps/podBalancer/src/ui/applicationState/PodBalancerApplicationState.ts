@@ -60,6 +60,9 @@ export function storeCurrentPersonAction(id, obj) {
 
 export function storeCurrenPersonReducer(state, action) {
   var obj = action.payload.obj
+  if (action.payload.value && action.payload.value.length) {
+    obj = { id: action.payload.value }
+  }
   if (action.payload.fieldValue && action.payload.fieldValue.length) {
     obj = { id: action.payload.fieldValue }
   }
