@@ -25,6 +25,10 @@
       {
         "id": "PodBalancer.AnalysisHolidaysContent",
         "title": "Holidays"
+      },
+      {
+        "id": "PodBalancer.AnalysisTicketsContent",
+        "title": "Tickets"
       }
     ]
   },

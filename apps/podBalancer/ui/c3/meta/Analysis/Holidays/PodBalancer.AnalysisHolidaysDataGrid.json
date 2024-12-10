@@ -48,7 +48,15 @@
           "fieldName": "date",
           "label": "Date",
           "sortable": true,
-          "searchable": true
+          "searchable": true,
+          "format": {
+            "type": "UiSdlDateTimeParamKindFormat",
+            "spec": {
+              "year": "numeric",
+              "month": "numeric",
+              "day": "numeric"
+            }
+          }
         },
         {
           "fieldName": "calendar.company.name",

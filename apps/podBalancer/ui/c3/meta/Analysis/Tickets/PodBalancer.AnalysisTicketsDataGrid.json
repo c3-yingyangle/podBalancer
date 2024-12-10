@@ -1,0 +1,108 @@
+{
+  "type": "UiSdlConnected<UiSdlDataGrid>",
+  "component": {
+    "header": {
+      "title": "Tickets"
+    },
+    "exportable": true,
+    "filterBar": true,
+    "defaultPageSize": 10,
+    "paginationConfig": {
+      "pageSize": 10,
+      "pageSizes": [10, 20, 30, 40],
+      "pagination": true
+    },
+    "dataSpec": {
+      "dataType": "Issue",
+      "contextVars": {
+        "workstream.id": {
+          "type": "UiSdlApplicationStateValueParam",
+          "id": "PodBalancer.PodBalancerApplicationState",
+          "path": "selectedWorkstream.id"
+        }
+      },
+      "columnFields": [
+        {
+          "fieldName": "ticketNumber",
+          "label": "Ticket",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "name",
+          "label": "Name",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "storyPoints",
+          "label": "Pts",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "status",
+          "label": "Status",
+          "sortable": true,
+          "searchable": true,
+          "indicatorMappingField": "statusCategory",
+          "indicatorMapping": {
+            "Done": "#49BFA9", // green
+            "In Progress": "#4F8DFF", // blue
+            "To Do":  "#A7ADC4" // gray
+          }
+        },
+        {
+          "fieldName": "dateCreated",
+          "label": "Date Created",
+          "sortable": true,
+          "searchable": true,
+          "format": {
+            "type": "UiSdlDateTimeParamKindFormat",
+            "spec": {
+              "year": "numeric",
+              "month": "numeric",
+              "day": "numeric"
+            }
+          },
+          "defaultSortField": {
+            "sortOrder": "descending"
+          }
+        },
+        {
+          "fieldName": "dateCompleted",
+          "label": "Date Completed",
+          "sortable": true,
+          "searchable": true,
+          "format": {
+            "type": "UiSdlDateTimeParamKindFormat",
+            "spec": {
+              "year": "numeric",
+              "month": "numeric",
+              "day": "numeric"
+            }
+          }
+        },
+        {
+          "fieldName": "parentTicketNumber",
+          "label": "Parent",
+          "sortable": true,
+          "searchable": true
+        },
+        {
+          "fieldName": "statusCategory",
+          "hidden": true
+        }
+      ]
+    }
+  },
+  "effectTriggers": [
+    {
+      "trigger": "PodBalancer.AnalysisHolidaysDataGrid.TABLE_ACTION_CLICK_CREATE_HOLIDAY",
+      "effectType": "UiSdlEpicShowUiSdlModal",
+      "payload": {
+        "modal": "PodBalancer.CreateHolidayModal"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "UiSdlConnected<UiSdlLayoutContainer>",
+  "component": {
+    "wrapWithMetadataId": true,
+    "children": [
+      [
+        {
+          "id": "PodBalancer.AnalysisTicketsDataGrid",
+          "width": 100
+        }
+      ]
+    ]
+  }
+}
