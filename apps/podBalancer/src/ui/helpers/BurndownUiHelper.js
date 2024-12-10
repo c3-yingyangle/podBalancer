@@ -5,7 +5,7 @@ function getBurndownChartConfig(workstreamId, interval) {
 
   if (workstreamId) {
     var workstream = Workstream.make(workstreamId).get();
-    var chartConfig = generateChart(workstream, interval);
+    var chartConfig = generateBurndownChart(workstream, interval);
   } else {
     chartConfig = generateEmptyState();
   }
@@ -26,7 +26,7 @@ function generateEmptyState() {
   return chartConfig;
 }
 
-function generateChart(workstream, interval) {
+function generateBurndownChart(workstream, interval) {
   var chartStartDate = workstream.start;
   // TODO: set end date to the last datetime in all our timeseries
   var chartEndDate = workstream.end.plusDays(30);
@@ -98,7 +98,7 @@ function generateChart(workstream, interval) {
             metricName: "TotalActualPointsRemaining",
             evaluateAction: "EVAL",
             entityId: workstream.id,
-            color: "#00ff00",
+            color: "#f2950a", // blue
             visualizationType: {
               type: "UiSdlTimeseriesLineBarChartLineVisualization",
               lineStyle: "Solid",
@@ -111,7 +111,7 @@ function generateChart(workstream, interval) {
             metricName: "TotalExpectedPointsRemaining",
             evaluateAction: "EVAL",
             entityId: workstream.id,
-            color: "#0000ff",
+            color: "#228630", // green
             visualizationType: {
               type: "UiSdlTimeseriesLineBarChartLineVisualization",
               lineStyle: "Solid",
