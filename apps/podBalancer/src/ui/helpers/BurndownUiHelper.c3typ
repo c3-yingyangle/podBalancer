@@ -22,6 +22,12 @@ type BurndownUiHelper mixes FeatureEvaluatable {
   evalMetrics: function(spec: json): EvalMetricsResult js-rhino
 
   /**
+   * Wrapper for evalMetrics() becuase getting some error about evalMetrics not being implemented
+   * for some reason.
+   */
+  evalMetricsWrapper: function(spec: json): EvalMetricsResult js-rhino
+
+  /**
    * Helper function to return the data for the burndown data grid.
    */
   getBurndownDataGrid: function(workstream: Workstream): json js-rhino

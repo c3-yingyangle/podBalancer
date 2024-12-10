@@ -58,36 +58,43 @@
         {
           "fieldName": "numEngineers",
           "label": "# Engineers",
+          "tooltipText": "Average number of FTEs allocated for this week",
           "sortable": true,
           "searchable": true
         },
         {
           "fieldName": "numPointsCompletedActual",
           "label": "Pts Completed - Actual",
+          "tooltipText": "Actual number of story points completed in this week",
           "sortable": true,
           "searchable": true
         },
         {
           "fieldName": "numPointsCompletedExpected",
           "label": "Pts Completed - Expected",
+          "tooltipText": "Expected number of story points completed in this week",
           "sortable": true,
           "searchable": true
         },
         {
           "fieldName": "numPointsRemainingActual",
           "label": "Pts Remaining - Actual",
+          "tooltipText": "Actual number of story points remaining at the beginning of this week",
           "sortable": true,
           "searchable": true
         },
         {
           "fieldName": "numPointsRemainingExpected",
           "label": "Pts Remaining - Expected",
+          "iconName": "info-circle",
+          "tooltipText": "Expected number of story points remaining at the beginning of this week",
           "sortable": true,
           "searchable": true
         },
         {
           "fieldName": "numPointsBehind",
           "label": "Pts Behind",
+          "tooltipText": "Actual story points remaining minus expected story points remaining",
           "sortable": true,
           "searchable": true,
           "indicatorMappingField": "numPointsBehindStatus",

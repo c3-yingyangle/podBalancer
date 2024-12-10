@@ -207,6 +207,10 @@ function evalMetrics(spec) {
   };
 }
 
+function evalMetricsWrapper(spec) {
+  return evalMetrics(spec)
+}
+
 function getBurndownDataGrid(workstream) {
   workstream = Workstream.forId(workstream.id)
   var start = workstream.start
@@ -220,25 +224,35 @@ function getBurndownDataGrid(workstream) {
   var ftes = Workstream.getWorkstreamAllocationPct(workstream, start, end).workstreamAllocationPct
 
   // Evaluate result
-  var spec = EvalMetricsSpec.make({
-    start: start,
-    end: end,
+  var workstreamMetricSpec = {
+    start: start.toString(),
+    end: end.toString(),
     interval: "DAY",
     timeZone: "NONE",
     ids: [ workstream.id ],
     expressions: [
       "ActualPointsCompleted",
       "ExpectedPointsCompleted",
-      "TotalActualPointsRemaining",
       "TotalExpectedPointsRemaining",
     ],
-  })
-  var metricResult = Workstream.evalMetrics(spec)
+  }
+  var workstreamMetricResult = Workstream.evalMetrics(workstreamMetricSpec)
+  var burndownMetricSpec = {
+    start: start.toString(),
+    end: end.toString(),
+    interval: "DAY",
+    timeZone: "NONE",
+    ids: [ workstream.id ],
+    expressions: [
+      "TotalActualPointsRemaining",
+    ],
+  }
+  var burndownMetricResult = BurndownUiHelper.evalMetricsWrapper(burndownMetricSpec)
 
-  var actualPointsCompleted = metricResult.result.get(workstream.id).get('ActualPointsCompleted')._data
-  var expectedPointsCompleted = metricResult.result.get(workstream.id).get('ExpectedPointsCompleted')._data
-  var totalActualPointsRemaining = metricResult.result.get(workstream.id).get('TotalActualPointsRemaining')._data
-  var totalExpectedPointsRemaining = metricResult.result.get(workstream.id).get('TotalExpectedPointsRemaining')._data
+  var actualPointsCompleted = workstreamMetricResult.result.get(workstream.id).get('ActualPointsCompleted')._data
+  var expectedPointsCompleted = workstreamMetricResult.result.get(workstream.id).get('ExpectedPointsCompleted')._data
+  var totalActualPointsRemaining = burndownMetricResult.result.get(workstream.id).get('TotalActualPointsRemaining')._data
+  var totalExpectedPointsRemaining = workstreamMetricResult.result.get(workstream.id).get('TotalExpectedPointsRemaining')._data
 
   // By week
   var now = DateTime.now()
@@ -253,9 +267,9 @@ function getBurndownDataGrid(workstream) {
         currentWeek.numEngineers = round(Math.max.apply(null, currentWeek.numEngineers)) + ' FTE'
         currentWeek.numPointsBehind = round(currentWeek.numPointsRemainingActual - currentWeek.numPointsRemainingExpected) + ' pts'
         currentWeek.numPointsBehindStatus = currentWeek.numPointsRemainingActual - currentWeek.numPointsRemainingExpected > 0 ? 'Red' : (currentWeek.numPointsRemainingActual - currentWeek.numPointsRemainingExpected < 0 ? 'Green' : 'Blue')
-        currentWeek.numPointsCompletedActual = round(currentWeek.numPointsCompletedActual) + ' pts'
+        currentWeek.numPointsCompletedActual = currentWeek.status == 'Future' ? '( ' + round(currentWeek.numPointsCompletedExpected) + ' pts )' : round(currentWeek.numPointsCompletedActual) + ' pts'
         currentWeek.numPointsCompletedExpected = round(currentWeek.numPointsCompletedExpected) + ' pts'
-        currentWeek.numPointsRemainingActual = round(currentWeek.numPointsRemainingActual) + ' pts'
+        currentWeek.numPointsRemainingActual = currentWeek.status == 'Future' ? '( ' + round(currentWeek.numPointsRemainingActual) + ' pts )' : round(currentWeek.numPointsRemainingActual) + ' pts'
         currentWeek.numPointsRemainingExpected = round(currentWeek.numPointsRemainingExpected) + ' pts'
         objs.push(currentWeek)
       }
