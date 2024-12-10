@@ -14,6 +14,7 @@
       "pageSizes": [10, 20, 30, 40],
       "pagination": true
     },
+    "rowDensity": "SMALL",
     "tableActions": [
       {
         "type": "UiSdlActionGroup",

@@ -11,6 +11,7 @@
     },
     "removableColumns": true,
     "resizableColumns": true,
+    "rowDensity": "SMALL",
     "dataSpec": {
       "dataType": "BurndownUiHelper",
       "advancedDataSpec": {
@@ -34,7 +35,10 @@
           "fieldName": "id",
           "label": "#",
           "sortable": true,
-          "searchable": true
+          "searchable": true,
+          "width": {
+            "value": 50
+          }
         },
         {
           "fieldName": "date",
@@ -46,6 +50,9 @@
             "Past": "#49BFA9", // green
             "Current": "#4F8DFF", // blue
             "Future":  "#A7ADC4" // gray
+          },
+          "width": {
+            "value": 140
           }
         },
         {

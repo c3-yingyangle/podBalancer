@@ -9,9 +9,11 @@
     "defaultPageSize": 10,
     "paginationConfig": {
       "pageSize": 10,
-      "pageSizes": [10, 20, 30, 40],
+      "pageSizes": [10, 20, 30, 40, 50],
       "pagination": true
     },
+    "resizableColumns": true,
+    "rowDensity": "SMALL",
     "dataSpec": {
       "dataType": "Issue",
       "contextVars": {
@@ -32,7 +34,10 @@
           "fieldName": "name",
           "label": "Name",
           "sortable": true,
-          "searchable": true
+          "searchable": true,
+          "width": {
+            "value": 250
+          }
         },
         {
           "fieldName": "storyPoints",
