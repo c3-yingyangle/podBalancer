@@ -1,5 +1,5 @@
 function createWorkstream(spec) {
-  return Workstream.make(spec).upsert();
+  return Workstream.make(spec).merge();
 }
 
 function getDatesBetween(start, end) {
@@ -340,6 +340,7 @@ function getTotalHoursCompleted(obj, spec, metric) {
     order: 'ascending(dateCompleted)',
     limit:1,
   }).objs[0].dateCompleted || DateTime.now().toString()
+  if (start > spec.start) start = spec.start
 
   // Evaluate
   var newSpec = EvalMetricSpec.make({
