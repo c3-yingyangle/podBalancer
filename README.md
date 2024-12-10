@@ -23,25 +23,26 @@ JiraIntegration.Config.setSecretValue('apiToken', 'XXX')
 <img width="301" alt="Screenshot 2024-11-27 at 11 56 14 AM" src="https://github.com/user-attachments/assets/c9d288cc-0c3b-49c7-9ed0-3629cd971b9d">
 
 4. In the "Engineers" tab on the right, click the "+" button to add some engineers to your workstream and define their allocation and PTO. (Note that an allocation of 1 is 100%)
-<img width="1606" alt="Screenshot 2024-11-27 at 11 55 17 AM" src="https://github.com/user-attachments/assets/6003bd4b-4bd9-4d93-847d-8cf7fd8f993b">
+<img width="1602" alt="Screenshot 2024-12-10 at 3 04 29 PM" src="https://github.com/user-attachments/assets/6617594e-e5ff-4132-b22d-6aec1d410daf">
 <img width="814" alt="Screenshot 2024-11-27 at 11 14 39 AM" src="https://github.com/user-attachments/assets/4b364c5d-8cca-4201-9924-31c178195d0d">
 
 5. (Optional) In the "Holidays" tab, you can add or remove any holidays
-<img width="1604" alt="Screenshot 2024-11-27 at 11 55 24 AM" src="https://github.com/user-attachments/assets/927d4789-340e-45a6-b5b7-d5037f38a6a2">
+<img width="1602" alt="Screenshot 2024-12-10 at 3 04 21 PM" src="https://github.com/user-attachments/assets/6a965711-c017-4438-ae78-8b055c2a9390">
 
 6. Navigate back to the "Burndown" tab and you should see the Burndown chart using your newly allocated engineers 
-<img width="1604" alt="Screenshot 2024-11-27 at 11 54 49 AM" src="https://github.com/user-attachments/assets/bc4c8ee8-2868-4f6e-b954-85b5db88c31d">
+<img width="1350" alt="Screenshot 2024-12-10 at 3 04 49 PM" src="https://github.com/user-attachments/assets/8fabf825-4e73-4874-85f9-51c6d0dfa605">
+
+7. You can also view the Tickets included in the Workstream in the "Tickets" tab:
+<img width="1603" alt="Screenshot 2024-12-10 at 3 04 14 PM" src="https://github.com/user-attachments/assets/7724d9be-f037-4942-9f37-29a3c005a8bf">
 
 
 
 ## To Do
 
  - [ ] Add functionality to the "Add Holiday" modal form
- - [ ] Update Burndown data grid so that the "Pts Completed - Actual" column shows the projected actual completion for future dates (i.e. the way the line chart is doing currently)
  - [ ] Add some KPI metric tiles for total story points in a workstream, total number of tickets, avg. number of FTE from start to finish, how many days after or before the due date the workstream will be finished at the current expected completion rate
  - [ ] Add UI page with form for creating new `Person`s
  - [ ] Add restrictions on allocating a person more than 100%?
- - [ ] Add "Issues" tab to Analysis page showing a data grid of all Issues/tickets included in that Workstream?
  - [ ] Automatically select the first Workstream in the card list upon initial load, so that Analysis section isn't blank
  - [ ] Add a tab to the Analysis section "Scope" with a "Scope Change" line chart that has an ideal line being a straight horizontal line at the number of story points at the beginning of the workstream, and an actual line being the cumulative sum of story points created over time
  - [ ] On the "Engineers" tab, add a data grid showing allocation per week like this:
