@@ -7,7 +7,7 @@
   {
     "id":"TotalActualHoursRemaining",
     "name":"TotalActualHoursRemaining",
-    "expression": "CumulativeHoursCreated - CumulativeActualHoursCompleted"
+    "expression": "CumulativeHoursCreated - (CumulativeActualHoursCompleted ? CumulativeActualHoursCompleted : 0)"
   },
   {
     "id":"TotalExpectedHoursRemaining",

@@ -339,7 +339,7 @@ function getTotalHoursCompleted(obj, spec, metric) {
     filter: Filter.eq('workstream.id', obj.id), 
     order: 'ascending(dateCompleted)',
     limit:1,
-  }).objs[0].dateCompleted
+  }).objs[0].dateCompleted || DateTime.now().toString()
 
   // Evaluate
   var newSpec = EvalMetricSpec.make({
@@ -351,7 +351,6 @@ function getTotalHoursCompleted(obj, spec, metric) {
     timeZone: 'NONE',
   })
   var metricResult = Workstream.evalMetric(newSpec)
-  // return metricResult
 
   var deltaDays = DateTime.deltaSeconds(DateTime.fromString(start).withTime(0, 0, 0, 0).withoutZone(), spec.start.withTime(0, 0, 0, 0).withoutZone()) / 86400
   var data = deltaDays > 0 ? metricResult._data.slice(deltaDays,) : metricResult._data
