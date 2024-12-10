@@ -1,0 +1,187 @@
+{
+  "type": "UiSdlConnected<UiSdlFilterPanel>",
+  "component": {
+    "title": {
+      "title": "Filter"
+    },
+    "settingsMenu": {
+      "allowSaveAndLoadConfiguration": false,
+      "allowAdvancedFilterMode": false
+    },
+    "dataSpec": {
+      "fieldSets": [
+        {
+          "fields": [
+            {
+              "type": "UiSdlFieldSetFilterFieldSetting",
+              "fieldName": "statusCategory",
+              "label": "Status Category",
+              "componentsToFilterMapping": {
+                "value": {
+                  "PodBalancer.AnalysisTicketsDataGrid": {
+                    "RiskFactorDraft": "statusCategory"
+                  }
+                }
+              },
+              "filterElement": {
+                "type": "UiSdlMultipleSearchFilterField",
+                "inputElement": {
+                  "clear": true,
+                  "fluid": true,
+                  "dataSpec": {
+                    "dataType": "Issue",
+                    "disableDataRequestOnFirstRender": false,
+                    "actionName": "evaluate",
+                    "args": {
+                      "spec": {
+                        "projection": "unique(statusCategory)",
+                        "filter": "exists(statusCategory) && workstream.id == '${selectedWorkstreamId}'",
+                        "limit": -1
+                      }
+                    },
+                    "contextVars": {
+                      "selectedWorkstreamId": {
+                        "type": "UiSdlApplicationStateValueParam",
+                        "id": "PodBalancer.PodBalancerApplicationState",
+                        "path": "selectedWorkstream.id"
+                      }
+                    },
+                    "dataPath": "tuples",
+                    "valueField": "cells[0].str",
+                    "displayField": "cells[0].str"
+                  }
+                }
+              }
+            },
+            {
+              "type": "UiSdlFieldSetFilterFieldSetting",
+              "fieldName": "status",
+              "label": "Status",
+              "componentsToFilterMapping": {
+                "value": {
+                  "PodBalancer.AnalysisTicketsDataGrid": {
+                    "RiskFactorDraft": "status"
+                  }
+                }
+              },
+              "filterElement": {
+                "type": "UiSdlMultipleSearchFilterField",
+                "inputElement": {
+                  "clear": true,
+                  "fluid": true,
+                  "dataSpec": {
+                    "dataType": "Issue",
+                    "disableDataRequestOnFirstRender": false,
+                    "actionName": "evaluate",
+                    "args": {
+                      "spec": {
+                        "projection": "unique(status)",
+                        "filter": "exists(status) && workstream.id == '${selectedWorkstreamId}'",
+                        "limit": -1
+                      }
+                    },
+                    "contextVars": {
+                      "selectedWorkstreamId": {
+                        "type": "UiSdlApplicationStateValueParam",
+                        "id": "PodBalancer.PodBalancerApplicationState",
+                        "path": "selectedWorkstream.id"
+                      }
+                    },
+                    "dataPath": "tuples",
+                    "valueField": "cells[0].str",
+                    "displayField": "cells[0].str"
+                  }
+                }
+              }
+            },
+            {
+              "type": "UiSdlFieldSetFilterFieldSetting",
+              "fieldName": "parentTicketNumber",
+              "label": "Parent",
+              "componentsToFilterMapping": {
+                "value": {
+                  "PodBalancer.AnalysisTicketsDataGrid": {
+                    "RiskFactorDraft": "parentTicketNumber"
+                  }
+                }
+              },
+              "filterElement": {
+                "type": "UiSdlMultipleSearchFilterField",
+                "inputElement": {
+                  "clear": true,
+                  "fluid": true,
+                  "dataSpec": {
+                    "dataType": "Issue",
+                    "disableDataRequestOnFirstRender": false,
+                    "actionName": "evaluate",
+                    "args": {
+                      "spec": {
+                        "projection": "unique(parentTicketNumber)",
+                        "filter": "exists(parentTicketNumber) && workstream.id == '${selectedWorkstreamId}'",
+                        "limit": -1
+                      }
+                    },
+                    "contextVars": {
+                      "selectedWorkstreamId": {
+                        "type": "UiSdlApplicationStateValueParam",
+                        "id": "PodBalancer.PodBalancerApplicationState",
+                        "path": "selectedWorkstream.id"
+                      }
+                    },
+                    "dataPath": "tuples",
+                    "valueField": "cells[0].str",
+                    "displayField": "cells[0].str"
+                  }
+                }
+              }
+            },
+            {
+              "type": "UiSdlFieldSetFilterFieldSetting",
+              "label": "Date Created",
+              "fieldName": "dateCreated",
+              "componentsToFilterMapping": {
+                "value": {
+                  "PodBalancer.AnalysisTicketsDataGrid": {
+                    "RiskFactorDraft": "dateCreated"
+                  }
+                }
+              },
+              "filterElement": {
+                "type": "UiSdlDateTimeRangeInputFilterField",
+                "inputElement": {
+                  "startLabel": "Start",
+                  "endLabel": "End",
+                  "allowKeyboardEdit": true,
+                  "noTimeZoneConversion": true,
+                  "showTimePicker": true
+                }
+              }
+            },
+            {
+              "type": "UiSdlFieldSetFilterFieldSetting",
+              "label": "Date Completed",
+              "fieldName": "dateCompleted",
+              "componentsToFilterMapping": {
+                "value": {
+                  "PodBalancer.AnalysisTicketsDataGrid": {
+                    "RiskFactorDraft": "dateCompleted"
+                  }
+                }
+              },
+              "filterElement": {
+                "type": "UiSdlDateTimeRangeInputFilterField",
+                "inputElement": {
+                  "startLabel": "Start",
+                  "endLabel": "End",
+                  "allowKeyboardEdit": true,
+                  "noTimeZoneConversion": true,
+                  "showTimePicker": true
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

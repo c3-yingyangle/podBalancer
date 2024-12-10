@@ -5,8 +5,12 @@
     "children": [
       [
         {
+          "id": "PodBalancer.AnalysisTicketsFilterPanel",
+          "width": 25
+        },
+        {
           "id": "PodBalancer.AnalysisTicketsDataGrid",
-          "width": 100
+          "width": 75
         }
       ]
     ]
